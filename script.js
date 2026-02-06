@@ -1,6 +1,6 @@
 // Tally Form Configuration
 // IMPORTANTE: Reemplaza 'XXXXXX' con tu ID real de Tally (ej: wM9kYp o similar)
-const TALLY_FORM_ID = 'XXXXXX'; // ← Pega aquí tu ID de formulario Tally
+const TALLY_FORM_ID = 'kdEqN6'; // ← Pega aquí tu ID de formulario Tally
 
 // Función para abrir el modal con Tally Form
 function openTallyModal() {
