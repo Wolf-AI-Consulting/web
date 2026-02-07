@@ -365,10 +365,10 @@ section {
     position: relative;
     display: inline-block;
     padding-bottom: 0.5rem;*/
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: var(--font-weight-semibold);
-    margin-bottom: 1.25rem; /* REDUCIDO: de 2rem a 1.25rem (20px) */
-    color: var(--color-accent);
+    margin-bottom: 1.5rem; /* REDUCIDO: de 2rem a 1.5rem (20px) */
+    color: var(--color-text);
     text-align: center;
 }
 
