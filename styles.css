@@ -796,11 +796,11 @@ section#solucion .container > .cta-button {
 /* Primera línea: Logo + slogan JUNTOS */
 .footer-top {
     display: flex;
-    justify-content: center; /* Cambiado de space-between a center */
+    justify-content: center;
     align-items: center;
-    gap: 1.5rem; /* Espacio controlado entre logo y slogan */
+    gap: 0.75rem; /* Logo y slogan más cerca */
     margin-bottom: 0.25rem;
-    flex-wrap: wrap; /* Para móvil */
+    flex-wrap: wrap;
 }
 
 .footer-logo img {
@@ -870,7 +870,7 @@ section#solucion .container > .cta-button {
     opacity: 0.7;
 }
 
-/* ===== RESPONSIVE FOOTER ===== */
+/* ===== RESPONSIVE FOOTER - MEJORADO ===== */
 @media (max-width: 768px) {
     .footer {
         padding: 1.5rem var(--spacing-md) 1.25rem var(--spacing-md);
@@ -878,7 +878,7 @@ section#solucion .container > .cta-button {
     
     .footer-top {
         flex-direction: column;
-        gap: 0.75rem; /* Un poco más de espacio en columna */
+        gap: 0.5rem;
         margin-bottom: 0.5rem;
     }
     
@@ -890,9 +890,10 @@ section#solucion .container > .cta-button {
         font-size: 0.85rem;
     }
     
+    /* 🔁 MEJORA CLAVE: Separación clara entre filas de enlaces */
     .footer-links {
-        gap: 0.75rem;
-        padding: 0.5rem 0;
+        gap: 0.5rem 1.25rem; /* Formato: row-gap column-gap */
+        padding: 0.75rem 0;
     }
     
     .footer-links a {
