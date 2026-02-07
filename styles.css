@@ -427,6 +427,12 @@ section {
     }
 }
 
+/* FIX ESPECÍFICO PARA BOTÓN EN SOLUCIÓN - AGREGAR AL FINAL DEL ARCHIVO */
+section#solucion .container > .cta-button {
+    margin: 4rem auto !important;
+    display: block !important;
+}
+
 
 /* Casos Section */
 .casos {
