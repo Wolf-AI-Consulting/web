@@ -699,31 +699,31 @@ section#solucion .container > .cta-button {
     font-weight: var(--font-weight-regular);
 }
 
-/* BOTÓN CTA FINAL - ESTILO UNIFICADO (SIN EFECTO BRILLO) */
+/* Boteon CTA Final */
 .cta-final .cta-button-large {
-    display: inline-block;
-    margin: 0 auto;
-    padding: 1.75rem 6rem;
-    font-size: 1.375rem;
-    background: linear-gradient(135deg, #5D5FEF 0%, #8B5FEF 100%);
+    display: block; 
+    margin: 0 auto; 
+    padding: 1.125rem 3rem; 
+    font-size: 1.125rem;
+    background: var(--color-accent); 
     border: none;
-    border-radius: 16px;
-    font-weight: var(--font-weight-bold);
+    border-radius: 12px; /
+    font-weight: var(--font-weight-semibold); 
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 35px rgba(93, 95, 239, 0.5);
+    box-shadow: 0 4px 15px rgba(93, 95, 239, 0.2);
     text-decoration: none;
-    /* Se eliminaron: position: relative; y overflow: hidden; */
 }
 
 .cta-final .cta-button-large:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(93, 95, 239, 0.6);
+    box-shadow: 0 6px 20px rgba(93, 95, 239, 0.3);
+    opacity: 0.9;
 }
 
 .cta-final .cta-button-large:active {
-    transform: translateY(-1px);
+     transform: translateY(0);
 }
 
 /* ===== RESPONSIVE CTA ===== */
@@ -746,9 +746,9 @@ section#solucion .container > .cta-button {
     .cta-final .cta-button-large {
         width: 90%;
         max-width: 400px;
-        padding: 1.5rem 3rem;
-        font-size: 1.25rem;
-        border-radius: 14px;
+        padding: 1.125rem 2rem;
+        font-size: 1.125rem;
+        border-radius: 12px; 
     }
 }
 
