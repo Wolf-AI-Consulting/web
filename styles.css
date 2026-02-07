@@ -299,9 +299,7 @@ section {
 .equipo .differentiators {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /*gap: var(--spacing-md);*/
     gap: 1.25rem; /* Espacio entre cajas ligeramente reducido */
-
     margin-bottom: var(--spacing-lg);
     max-width: 1200px;
     margin-left: auto;
@@ -358,51 +356,32 @@ section {
 
 }
 
-/* nuevo */
 .tech-title {
-    font-size: 1.125rem;
+    /*font-size: 1.125rem;
     font-weight: var(--font-weight-semibold);
     margin-bottom: var(--spacing-md);
     color: var(--color-text);
     text-align: center;
     position: relative;
     display: inline-block;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.5rem;*/
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 1.25rem; /* REDUCIDO: de 2rem a 1.25rem (20px) */
+    color: var(--color-accent);
+    text-align: center;
 }
-
-.tech-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(135deg, #5D5FEF 0%, #8B5FEF 50%, #C25FEF 100%);
-    border-radius: 2px;
-}
-
-/* fin nuevo */
 
 .tech-logos {
-    /*display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    justify-content: center;
-    margin-top: var(--spacing-sm);*/
     display: flex;
     flex-wrap: wrap;
     gap: 0.875rem;
     justify-content: center;
-    margin-top: var(--spacing-md);
+    /*margin-top: var(--spacing-md);*/
+    margin-top: 0; /* Asegurar que no haya margen extra arriba */
 }
 
 .tech-logos span {
-    /*padding: 0.5rem 1rem;
-    border-radius: 6px;
-    font-size: 0.875rem;
-    border: 1px solid var(--color-border);
-    color: var(--color-text-secondary);*/
     padding: 0.625rem 1.5rem;
     border-radius: 8px;
     font-size: 0.875rem;
