@@ -540,6 +540,78 @@ section {
     }
 }
 
+/*******/
+/* ========== FIX GLOBAL PARA GRIDS 2x2 ========== */
+
+/* Para PROBLEM GRID (4 items) */
+.problem-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Para CASES GRID (4 items) */
+.cases-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Para DIFFERENTIATORS GRID (4 items) */
+.differentiators {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Para SOLUTION GRID (2 items) - Ya está bien */
+.solution-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet (768px-1024px) - Mantener 2x2 */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .problem-grid,
+    .cases-grid,
+    .differentiators,
+    .solution-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem;
+    }
+}
+
+/* Móvil (≤768px) - 1 columna */
+@media (max-width: 768px) {
+    .problem-grid,
+    .cases-grid,
+    .differentiators,
+    .solution-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Móvil pequeño (≤480px) - Ajustes */
+@media (max-width: 480px) {
+    .problem-grid,
+    .cases-grid,
+    .differentiators,
+    .solution-grid {
+        max-width: 100%;
+        gap: 1rem;
+    }
+}
+
+
+/*******/
+
 /* Smooth Scroll */
 html {
     scroll-behavior: smooth;
