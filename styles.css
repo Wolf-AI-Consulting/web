@@ -244,9 +244,14 @@ section {
     background-color: var(--color-bg-secondary);
 }
 
-.cases-grid {
+/*.cases-grid {
     display: grid;
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}*/
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: var(--spacing-md);
 }
 
