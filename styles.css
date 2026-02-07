@@ -70,11 +70,10 @@ h1, h2, h3, h4 {
 }
 
 .hero-title {
-    font-size: clamp(2rem, 5vw, 4rem); /* AJUSTADO: de 2.5rem a 2rem para móvil */
+    font-size: clamp(2.5rem, 6vw, 4rem); /* EXACTO V2 */
     font-weight: var(--font-weight-semibold);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-md); /* EXACTO V2 */
     letter-spacing: -0.02em;
-    line-height: 1.2;
 }
 
 /* DEGRADADO SOLO A "Sin humo. Con resultados." */
@@ -87,11 +86,10 @@ h1, h2, h3, h4 {
 }
 
 .hero-subtitle {
-    font-size: clamp(0.875rem, 2vw, 1.25rem); /* AJUSTADO: de 1rem a 0.875rem para móvil */
+    font-size: clamp(1rem, 2vw, 1.25rem); /* EXACTO V2 */
     color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg); /* EXACTO V2 */
     font-weight: var(--font-weight-regular);
-    line-height: 1.5;
 }
 
 /* Buttons */
@@ -578,8 +576,8 @@ section {
     }
 }
 
-/* Mobile (480px - 767px) */
-@media (max-width: 767px) {
+/* Mobile (480px - 768px) */
+@media (max-width: 768px) {
     :root {
         --spacing-md: 1.5rem;
         --spacing-lg: 2rem;
@@ -587,8 +585,7 @@ section {
     }
     
     .hero {
-        min-height: 90vh;
-        padding: calc(var(--spacing-xl) + 2rem) 0 var(--spacing-xl);
+        padding: calc(var(--spacing-xl) * 1.5) 0 var(--spacing-xl); /* más espacio arriba por logo */
     }
     
     .hero-logo {
@@ -598,7 +595,12 @@ section {
     }
     
     .hero-title {
-        font-size: clamp(1.75rem, 5vw, 3rem);
+        font-size: clamp(2rem, 5vw, 3rem); /* ligera reducción solo en móvil */
+    }
+
+    .hero-subtitle {
+        font-size: clamp(0.9375rem, 2vw, 1.125rem); /* ligera reducción solo en móvil */
+        margin-bottom: 3rem; /* ajuste proporcional */
     }
     
     .section-title {
