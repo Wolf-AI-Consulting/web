@@ -277,6 +277,7 @@ section {
         padding: 1.5rem;
     }
 } */
+
 /* ===== PROBLEMA SECTION ===== */
 .problema {
     background-color: var(--color-bg-secondary); /* FONDO OSCURO */
@@ -337,7 +338,7 @@ section {
     margin: 0;
 }
 
-/* STATS */
+/* STATS - AJUSTADO */
 .problem-stats {
     text-align: center;
     margin: 3rem 0;
@@ -350,13 +351,12 @@ section {
     margin-right: auto;
 }
 
-/* AÑADIDO: .stat-badge */
 .stat-badge {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem; /* REDUCIDO */
     flex-wrap: wrap;
 }
 
@@ -375,12 +375,16 @@ section {
     max-width: 300px;
 }
 
-.stat-reason {
+/* AJUSTE PARA "por falta de enfoque" DENTRO DE .stat-badge */
+.stat-badge .stat-reason {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
     font-size: 1.125rem;
     color: var(--color-text-secondary);
     font-style: italic;
-    margin: 0;
-    display: block;
+    font-weight: var(--font-weight-regular);
 }
 
 /* CTA FINAL */
@@ -440,7 +444,6 @@ section {
         font-size: 1.5rem;
     }
 }
-
 
 
 /* ===== SOLUCIÓN SECTION ===== */
