@@ -176,6 +176,12 @@ section {
     display: flex; /* NUEVO: para centrar */
     align-items: center; /* NUEVO: centra vertical */
     justify-content: center; /* NUEVO: centra horizontal */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 12px;
+    transition: border-color 0.3s ease;
 }
 
 /********/
@@ -571,6 +577,8 @@ section {
     .problem-grid {
         grid-template-columns: 1fr;
         max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .problem-item {
