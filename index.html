@@ -1,286 +1,275 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Wolf AI Consulting - Implementamos IA en tu negocio. Auditoría + Roadmap de IA en 2 semanas para PYMEs.">
-  <title>Wolf AI Consulting | Consultoría de IA para PYMEs</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wolf AI Consulting - Implementamos IA en tu negocio. Auditoría + Roadmap de IA en 2 semanas para PYMEs.">
+    <title>Wolf AI Consulting | Consultoría de IA para PYMEs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div class="container">
-      <div class="logo">
-        <img src="./logo.png" alt="DeepWolf AI Consulting" class="logo-img">
-      </div>
-      <h1 class="hero-title fade-in">
-        Implementamos IA en tu negocio.<br>
-        <span class="highlight">Sin humo. Con resultados.</span>
-      </h1>
-      <p class="hero-subtitle fade-in-delay-1">
-        Auditoría + Roadmap de IA en 2 semanas<br>
-        Para PYMEs que quieren usar IA, pero no saben por dónde empezar
-      </p>
-      <button class="cta-button fade-in-delay-2" onclick="openTallyModal()">
-        Descubre tu Solución
-      </button>
-      <a href="#problema" class="scroll-hint">Cómo funciona ↓</a>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <img src="logo.png" alt="Wolf AI Consulting" class="hero-logo">
+            <h1 class="hero-title">
+                Implementamos IA en tu negocio.<br>
+                Sin humo. Con resultados.
+            </h1>
+            <p class="hero-subtitle">
+                Auditoría + Roadmap de IA en 2 semanas<br>
+                Para PYMEs que quieren usar IA, pero no saben por dónde empezar
+            </p>
+            <button class="cta-button" onclick="openTallyModal()">
+                Descubre tu Solución
+            </button>
+        </div>
+    </section>
 
-  <!-- Problema Section -->
-  <section id="problema" class="problema">
-    <div class="container">
-      <h2 class="section-title">¿Te suena esto?</h2>
-      <div class="problem-grid">
-        <div class="problem-item">
-          <span class="problem-icon">❌</span>
-          <p>"Sabemos que la IA puede ayudarnos, pero no sabemos por dónde empezar"</p>
+    <!-- Problema Section -->
+    <section id="problema" class="problema">
+        <div class="container">
+            <h2 class="section-title">¿Te suena esto?</h2>
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <p>"Sabemos que la IA puede ayudarnos, pero no sabemos por dónde empezar"</p>
+                </div>
+                <div class="problem-item">
+                    <p>"Invertimos en herramientas de IA... y nadie las usa"</p>
+                </div>
+                <div class="problem-item">
+                    <p>"Tenemos datos, pero no sacamos valor de ellos"</p>
+                </div>
+                <div class="problem-item">
+                    <p>"Nuestro equipo no tiene el expertise técnico para implementar esto"</p>
+                </div>
+            </div>
+            <p class="problem-conclusion">
+                No estás solo. El 80% de proyectos de IA en PYMEs fracasan por falta de enfoque.
+                <br><br>
+                Nosotros lo hacemos distinto.
+            </p>
         </div>
-        <div class="problem-item">
-          <span class="problem-icon">❌</span>
-          <p>"Invertimos en herramientas de IA... y nadie las usa"</p>
-        </div>
-        <div class="problem-item">
-          <span class="problem-icon">❌</span>
-          <p>"Tenemos datos, pero no sacamos valor de ellos"</p>
-        </div>
-        <div class="problem-item">
-          <span class="problem-icon">❌</span>
-          <p>"Nuestro equipo no tiene el expertise técnico para implementar esto"</p>
-        </div>
-      </div>
-      <p class="problem-conclusion">
-        No estás solo. El <strong>80% de proyectos de IA en PYMEs fracasan</strong> por falta de enfoque.<br><br>
-        Nosotros lo hacemos distinto.
-      </p>
-    </div>
-  </section>
+    </section>
 
-  <!-- Solución Section -->
-  <section id="solucion" class="solucion">
-    <div class="container">
-      <h2 class="section-title">Auditoría + Roadmap de IA en 2 Semanas</h2>
-      <p class="section-subtitle">Esto es lo que hacemos:</p>
-      <div class="solution-grid">
-        <div class="solution-column">
-          <div class="solution-icon">🔍</div>
-          <h3>Semana 1: Análisis</h3>
-          <ul>
-            <li>Entrevistas con tu equipo (2-3 horas)</li>
-            <li>Revisión de procesos y datos actuales</li>
-            <li>Identificación de 3-5 casos de uso viables</li>
-          </ul>
-        </div>
-        <div class="solution-column">
-          <div class="solution-icon">🗺️</div>
-          <h3>Semana 2: Roadmap</h3>
-          <ul>
-            <li>Priorización por ROI e impacto</li>
-            <li>Plan de implementación paso a paso</li>
-            <li>Presupuesto y timeline realistas</li>
-          </ul>
-        </div>
-      </div>
-      <div class="deliverables">
-        <h4>📋 Entregas:</h4>
-        <div class="deliverable-items">
-          <div class="deliverable-item">✓ Documento ejecutivo (20-30 páginas)</div>
-          <div class="deliverable-item">✓ Presentación para tu equipo</div>
-          <div class="deliverable-item">✓ 1 hora de Q&A incluida</div>
-        </div>
-      </div>
-      <div class="pricing">
-        <p class="price-old">Precio: <span style="text-decoration: line-through;">€2,500</span></p>
-        <p class="price-new">Oferta lanzamiento: <strong>€2,200</strong></p>
-        <p class="price-note">(Válido primeros 5 clientes)</p>
-      </div>
-      <button class="cta-button" onclick="openTallyModal()">
-        Quiero mi Auditoría
-      </button>
-    </div>
-  </section>
+    <!-- Solución Section -->
+    <section id="solucion" class="solucion">
+        <div class="container">
+            <h2 class="section-title">Auditoría + Roadmap de IA en 2 Semanas</h2>
+            
+            <div class="solution-grid">
+                <div class="solution-column">
+                    <h3>Semana 1: Análisis</h3>
+                    <ul>
+                        <li>Entrevistas con tu equipo (2-3 horas)</li>
+                        <li>Revisión de procesos y datos actuales</li>
+                        <li>Identificación de 3-5 casos de uso viables</li>
+                    </ul>
+                </div>
+                <div class="solution-column">
+                    <h3>Semana 2: Roadmap</h3>
+                    <ul>
+                        <li>Priorización por ROI e impacto</li>
+                        <li>Plan de implementación paso a paso</li>
+                        <li>Presupuesto y timeline realistas</li>
+                    </ul>
+                </div>
+            </div>
 
-  <!-- Casos de Uso Section -->
-  <section id="casos" class="casos">
-    <div class="container">
-      <h2 class="section-title">Casos de uso reales que implementamos</h2>
-      <div class="cases-grid">
-        <div class="case-card">
-          <div class="case-icon">🤖</div>
-          <h3>Chatbot Interno</h3>
-          <p>Automatiza respuestas a preguntas frecuentes de empleados</p>
-          <p class="case-result"><strong>Ahorro:</strong> 15-20h/semana en soporte interno</p>
-        </div>
-        <div class="case-card">
-          <div class="case-icon">📊</div>
-          <h3>Predicción de Demanda</h3>
-          <p>Modelos ML para anticipar necesidades de stock</p>
-          <p class="case-result"><strong>Resultado:</strong> -30% en costes de inventario</p>
-        </div>
-        <div class="case-card">
-          <div class="case-icon">⚡</div>
-          <h3>Automatización de Reportes</h3>
-          <p>De horas de trabajo manual a informes automáticos diarios</p>
-          <p class="case-result"><strong>Ahorro:</strong> 80% del tiempo en reporting</p>
-        </div>
-        <div class="case-card">
-          <div class="case-icon">📧</div>
-          <h3>Clasificación Inteligente</h3>
-          <p>Emails, tickets, documentos clasificados automáticamente</p>
-          <p class="case-result"><strong>Resultado:</strong> +50% velocidad de respuesta</p>
-        </div>
-      </div>
-      <p class="cases-cta">
-        ¿No ves tu caso aquí? <a href="#" onclick="openTallyModal(); return false;">Cuéntanos tu problema específico →</a>
-      </p>
-    </div>
-  </section>
+            <div class="deliverables">
+                <p class="deliverables-title">Entregas</p>
+                <div class="deliverable-items">
+                    <span>Documento ejecutivo (20-30 páginas)</span>
+                    <span>Presentación para tu equipo</span>
+                    <span>1 hora de Q&A incluida</span>
+                </div>
+            </div>
 
-  <!-- Quiénes Somos Section -->
-  <section id="equipo" class="equipo">
-    <div class="container">
-      <h2 class="section-title">Equipo Wolf AI Consulting</h2>
-      <p class="equipo-intro">
-        Somos Tech Leads con +15 años combinados implementando soluciones
-        de datos, IA y automatizaciones para empresas de retail, SaaS,
-        logística y servicios profesionales.
-      </p>
-      <div class="differentiators">
-        <div class="diff-item">
-          <div class="diff-icon">⚡</div>
-          <h4>Equipos pequeños, ejecución rápida</h4>
-          <p>Sin burocracia de consultoras gigantes</p>
-        </div>
-        <div class="diff-item">
-          <div class="diff-icon">💰</div>
-          <h4>Precio fijo por proyecto</h4>
-          <p>Nunca facturamos por horas, siempre por resultado</p>
-        </div>
-        <div class="diff-item">
-          <div class="diff-icon">💻</div>
-          <h4>Implementación real, no solo PowerPoints</h4>
-          <p>Código funcional, integrado con tu stack actual</p>
-        </div>
-        <div class="diff-item">
-          <div class="diff-icon">🎯</div>
-          <h4>Especialistas en PYMEs</h4>
-          <p>Entendemos tus limitaciones de tiempo y presupuesto</p>
-        </div>
-      </div>
-      <div class="tech-stack">
-        <p><strong>Tecnologías con las que trabajamos:</strong></p>
-        <div class="tech-logos">
-          <span>Python</span>
-          <span>OpenAI</span>
-          <span>Anthropic</span>
-          <span>LangChain</span>
-          <span>Make.com</span>
-          <span>Azure</span>
-          <span>AWS</span>
-          <span>SQL</span>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div class="pricing">
+                <p class="price">€2,500</p>
+            </div>
 
-  <!-- FAQ Section -->
-  <section id="faq" class="faq">
-    <div class="container">
-      <h2 class="section-title">Preguntas Frecuentes</h2>
-      <div class="faq-container">
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>¿Cuánto cuesta?</span>
-            <span class="faq-toggle">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>La Auditoría + Roadmap cuesta €2,500 (€2,200 oferta lanzamiento).
-              Proyectos de implementación desde €6,000 según alcance.
-              Siempre precio fijo, nunca por horas.</p>
-          </div>
+            <button class="cta-button" onclick="openTallyModal()">
+                Quiero mi Auditoría
+            </button>
         </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>¿Cuánto dura?</span>
-            <span class="faq-toggle">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Auditoría: 2 semanas. Proyectos de implementación (PoCs): 4-8 semanas.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>¿Trabajáis con empresas de mi sector?</span>
-            <span class="faq-toggle">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Sí. Hemos trabajado con retail, SaaS, logística, agencias de marketing,
-              y servicios profesionales. Si tu sector no está, mejor: menos competencia,
-              más ventaja competitiva para ti.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>¿Qué necesito tener preparado?</span>
-            <span class="faq-toggle">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Nada. Solo acceso a tu equipo (2-3 horas de su tiempo) y documentación
-              básica de procesos si existe.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>¿Y después de la auditoría?</span>
-            <span class="faq-toggle">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Puedes implementar el roadmap con tu equipo interno, con nosotros,
-              o con quien prefieras. El roadmap es tuyo, sin letra pequeña.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA Final Section -->
-  <section id="cta-final" class="cta-final">
-    <div class="container">
-      <h2 class="section-title">¿Listo para dar el primer paso?</h2>
-      <p class="cta-final-text">
-        Agenda una llamada de 30 minutos (sin compromiso).<br>
-        Hablamos de tu situación y vemos si tiene sentido trabajar juntos.
-      </p>
-      <button class="cta-button cta-button-large" onclick="openTallyModal()">
-        Agenda tu Llamada Gratis
-      </button>
-      <div class="contact-info">
-        <p>O escríbenos directamente:</p>
-        <p class="email-contact">📧 hola@wolf.ai</p>
-      </div>
-    </div>
-  </section>
+    <!-- Casos de Uso Section -->
+    <section id="casos" class="casos">
+        <div class="container">
+            <h2 class="section-title">Casos de uso que implementamos</h2>
+            
+            <div class="cases-grid">
+                <div class="case-card">
+                    <h3>Chatbot Interno</h3>
+                    <p>Automatiza respuestas a preguntas frecuentes de empleados</p>
+                    <p class="case-result">Ahorro: 15-20h/semana</p>
+                </div>
+                
+                <div class="case-card">
+                    <h3>Predicción de Demanda</h3>
+                    <p>Modelos ML para anticipar necesidades de stock</p>
+                    <p class="case-result">-30% en costes de inventario</p>
+                </div>
+                
+                <div class="case-card">
+                    <h3>Automatización de Reportes</h3>
+                    <p>De horas de trabajo manual a informes automáticos</p>
+                    <p class="case-result">80% menos tiempo</p>
+                </div>
+                
+                <div class="case-card">
+                    <h3>Clasificación Inteligente</h3>
+                    <p>Emails, tickets, documentos clasificados automáticamente</p>
+                    <p class="case-result">+50% velocidad de respuesta</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>Wolf AI Consulting © 2026 | Valencia, España</p>
-    </div>
-  </footer>
+    <!-- Quiénes Somos Section -->
+    <section id="equipo" class="equipo">
+        <div class="container">
+            <h2 class="section-title">Equipo Wolf AI Consulting</h2>
+            
+            <p class="equipo-intro">
+                Tech Leads con +15 años combinados implementando soluciones 
+                de datos, IA y automatizaciones.
+            </p>
 
-  <!-- Tally Modal -->
-  <div id="tallyModal" class="modal">
-    <div class="modal-content">
-      <span class="modal-close" onclick="closeTallyModal()">&times;</span>
-      <div id="tallyFormContainer"></div>
-    </div>
-  </div>
+            <div class="differentiators">
+                <div class="diff-item">
+                    <h4>Equipos pequeños, ejecución rápida</h4>
+                    <p>Sin burocracia de consultoras gigantes</p>
+                </div>
+                
+                <div class="diff-item">
+                    <h4>Precio fijo por proyecto</h4>
+                    <p>Nunca por horas, siempre por resultado</p>
+                </div>
+                
+                <div class="diff-item">
+                    <h4>Implementación real</h4>
+                    <p>Código funcional, no solo PowerPoints</p>
+                </div>
+                
+                <div class="diff-item">
+                    <h4>Especialistas en PYMEs</h4>
+                    <p>Entendemos tus limitaciones</p>
+                </div>
+            </div>
 
-  <script src="script.js"></script>
+            <div class="tech-stack">
+                <p class="tech-title">Stack tecnológico</p>
+                <div class="tech-logos">
+                    <span>Python</span>
+                    <span>OpenAI</span>
+                    <span>Anthropic</span>
+                    <span>LangChain</span>
+                    <span>Make</span>
+                    <span>Azure</span>
+                    <span>AWS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Cuánto cuesta?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>La Auditoría + Roadmap cuesta €2,500. Proyectos de implementación desde €6,000 según alcance. Siempre precio fijo, nunca por horas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Cuánto dura?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Auditoría: 2 semanas. Proyectos de implementación: 4-8 semanas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Trabajáis con empresas de mi sector?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí. Hemos trabajado con retail, SaaS, logística, agencias de marketing y servicios profesionales. Si tu sector no está, mejor: menos competencia, más ventaja competitiva.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Qué necesito tener preparado?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nada. Solo acceso a tu equipo (2-3 horas) y documentación básica de procesos si existe.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Y después de la auditoría?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Puedes implementar con tu equipo, con nosotros, o con quien prefieras. El roadmap es tuyo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final Section -->
+    <section id="cta-final" class="cta-final">
+        <div class="container">
+            <h2 class="section-title">¿Listo para dar el primer paso?</h2>
+            <p class="cta-final-text">
+                Agenda una llamada de 30 minutos sin compromiso.
+            </p>
+            
+            <button class="cta-button cta-button-large" onclick="openTallyModal()">
+                Agenda tu Llamada
+            </button>
+
+            <div class="contact-info">
+                <p class="email-contact">hola@wolf.ai</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Wolf AI Consulting © 2025 | Valencia, España</p>
+        </div>
+    </footer>
+
+    <!-- Tally Modal -->
+    <div id="tallyModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeTallyModal()">&times;</span>
+            <div id="tallyFormContainer"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
