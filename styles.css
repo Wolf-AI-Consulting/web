@@ -325,10 +325,11 @@ section {
 }
 
 .solution-column li:before {
-    content: "—";
+    content: "✓"; /* CHECK en lugar de guión */
     position: absolute;
     left: 0;
     color: var(--color-accent);
+    font-weight: bold;
 }
 
 /* CAMBIADO: Sin background en el contenedor principal */
@@ -367,7 +368,7 @@ section {
 /* Botón en sección solución */
 #solucion .cta-button {
     display: block;
-    margin: 0 auto;
+    margin: 2.5rem auto; /* ESPACIO IGUAL ARRIBA Y ABAJO */
     padding: 1rem 3rem;
     font-size: 1.125rem;
     background: var(--color-accent);
@@ -375,11 +376,13 @@ section {
     border-radius: 12px;
     font-weight: var(--font-weight-semibold);
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(93, 95, 239, 0.2);
 }
 
 #solucion .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(93, 95, 239, 0.3);
     opacity: 0.9;
-    transform: translateY(-2px);
 }
 
 /* ===== RESPONSIVE ===== */
