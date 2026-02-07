@@ -325,9 +325,7 @@ section {
 
 /* CAMBIADO: CHECK en lugar de guión */
 .solution-column li:before {
-    content: "\\2713"; /* Código Unicode para check */
-    /* o 
-    content: "\\2714"; /* Check más grueso */
+    content: "\2714"; /* ✔ */
     position: absolute;
     left: 0;
     color: var(--color-accent);
