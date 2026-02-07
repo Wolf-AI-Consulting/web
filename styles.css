@@ -525,6 +525,28 @@ section {
     }
 }
 
+/* Ajuste para Problem Grid - 2x2 en móvil */
+@media (max-width: 768px) {
+    .problem-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas fijas */
+        gap: 1rem;
+    }
+    
+    .problem-item {
+        min-height: 140px; /* altura mínima para consistencia */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Para móviles muy pequeños (< 480px) mantener 1 columna */
+@media (max-width: 480px) {
+    .problem-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Smooth Scroll */
 html {
     scroll-behavior: smooth;
