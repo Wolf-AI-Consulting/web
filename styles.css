@@ -177,7 +177,7 @@ section {
     margin: 0 auto;
 }
 
-/* Solución Section */
+/* Solución Section
 .solution-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -245,7 +245,144 @@ section {
     font-size: 3rem;
     color: var(--color-text);
     font-weight: var(--font-weight-semibold);
+} */
+
+/* ===== SOLUCIÓN SECTION ===== */
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
+
+.solution-column {
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    transition: all 0.3s ease;
+}
+
+.solution-column:hover {
+    border-color: var(--color-accent);
+}
+
+.solution-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+}
+
+.solution-column ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.solution-column li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-secondary);
+}
+
+.solution-column li:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+}
+
+.deliverables {
+    padding: 2.5rem;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
+    background: rgba(93, 95, 239, 0.05);
+}
+
+.deliverables-title {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.deliverable-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.deliverable-items span {
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-text);
+    font-weight: var(--font-weight-regular);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Botón en sección solución */
+#solucion .cta-button {
+    display: block;
+    margin: 0 auto;
+    padding: 1rem 3rem;
+    font-size: 1.125rem;
+    background: var(--color-accent);
+    border: none;
+    border-radius: 12px;
+    font-weight: var(--font-weight-semibold);
+    transition: all 0.3s ease;
+}
+
+#solucion .cta-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .solution-grid {
+        gap: 1.5rem;
+    }
+    
+    .solution-column {
+        padding: 1.5rem;
+    }
+    
+    .deliverables {
+        padding: 2rem;
+    }
+    
+    .deliverable-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .solution-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .deliverable-items {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .deliverables {
+        padding: 1.5rem;
+    }
+    
+    #solucion .cta-button {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+
 
 /* Casos Section */
 .casos {
