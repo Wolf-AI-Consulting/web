@@ -286,7 +286,7 @@ section {
     font-weight: var(--font-weight-medium);
 }
 
-/* Equipo Section 
+/* Equipo Section */
 .equipo-intro {
     text-align: center;
     font-size: 1.125rem;
@@ -344,76 +344,7 @@ section {
     font-size: 0.875rem;
     border: 1px solid var(--color-border);
     color: var(--color-text-secondary);
-}*/
-
-/* Lo nuevo */
-/* SOLO para Differentiators en sección Equipo */
-.equipo .differentiators {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
 }
-
-.equipo .diff-item {
-    padding: var(--spacing-md);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    text-align: center;
-    transition: all 0.3s ease;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 220px;
-}
-
-.equipo .diff-item:hover {
-    border-color: var(--color-accent);
-    transform: translateY(-5px);
-}
-
-.equipo .diff-icon {
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-sm);
-}
-
-.equipo .diff-item h4 {
-    font-size: 1.125rem;
-    margin-bottom: var(--spacing-xs);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-text);
-}
-
-.equipo .diff-item p {
-    color: var(--color-text-secondary);
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* RESPONSIVE ESPECÍFICO */
-@media (max-width: 768px) {
-    .equipo .differentiators {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-        gap: var(--spacing-sm);
-    }
-    
-    .equipo .diff-item {
-        min-height: 180px;
-        padding: var(--spacing-sm);
-    }
-    
-    .equipo .diff-icon {
-        font-size: 2rem;
-    }
-}
-/* fin de lo nuevo */
 
 /* FAQ Section */
 .faq {
