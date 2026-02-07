@@ -398,7 +398,7 @@ section {
     flex-wrap: wrap;
     gap: var(--spacing-sm);
     justify-content: center;
-    /*margin-top: var(--spacing-sm);*/
+    margin-top: var(--spacing-sm);
 }
 
 .tech-logos span {
