@@ -253,20 +253,22 @@
 
     <!-- CTA Final Section -->
     <section id="cta-final" class="cta-final">
-        <div class="container">
-            <h2 class="section-title">¿Listo para dar el primer paso?</h2>
-            <p class="cta-final-text">
-                Agenda una llamada de 30 minutos sin compromiso.
-            </p>
-            
-            <button class="cta-button cta-button-large" onclick="openTallyModal()">
-                Agenda tu Llamada
-            </button>
+    <div class="container">
+        <h2 class="section-title">¿Listo para dar el primer paso?</h2>
+        <p class="cta-final-text">
+            Agenda una llamada de 30 minutos sin compromiso.
+        </p>
+        
+        <button class="cta-button cta-button-large" onclick="openTallyModal()">
+            Agenda tu Llamada
+        </button>
 
-            <div class="contact-info">
-                <p class="email-contact">wolfaiconsulting@gmail.com</p>
-            </div>
+        <div class="contact-info">
+            <a href="mailto:wolfaiconsulting@gmail.com" class="email-contact">
+                ✉️ wolfaiconsulting@gmail.com
+            </a>
         </div>
+    </div>
     </section>
 
     <!-- Footer
@@ -279,8 +281,10 @@
     <!-- Footer M -->
     <footer class="footer">
     <div class="container">
-        <div class="footer-logo">WOLF.AI</div>
-        <p class="footer-tagline">Sin humo. Con resultados.</p>
+        <div class="footer-brand">
+            <div class="footer-logo">WOLF.AI</div>
+            <p class="footer-tagline">Sin humo. Con resultados.</p>
+        </div>
         
         <div class="footer-links">
             <a href="#inicio">Inicio</a>
@@ -291,9 +295,12 @@
             <a href="#faq">FAQ</a>
         </div>
         
-        <p>Wolf AI Consulting © 2025 | Valencia, España</p>
+        <div class="footer-bottom">
+            <p>Wolf AI Consulting © 2025 | Valencia, España</p>
+        </div>
     </div>
-</footer>
+    </footer>
+
 
     <!-- Tally Modal -->
     <div id="tallyModal" class="modal">
