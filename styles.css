@@ -254,13 +254,12 @@ section {
     padding: var(--spacing-md);
     border: 1px solid var(--color-border);
     border-radius: 12px;
-    transition: all 0.3s ease;
-    background-color: var(--color-bg); /* ESTO SÍ ESTABA EN V2 */
+    transition: border-color 0.3s ease;
+    background-color: var(--color-bg); /* SÍ tiene fondo */
 }
 
 .case-card:hover {
     border-color: var(--color-accent);
-    transform: translateY(-5px); /* ESTO SÍ ESTABA EN V2 */
 }
 
 .case-card h3 {
@@ -273,11 +272,13 @@ section {
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-sm);
     font-size: 0.9375rem;
+    line-height: 1.5;
 }
 
 .case-result {
     color: var(--color-accent) !important;
     font-weight: var(--font-weight-medium);
+    font-size: 0.875rem;
 }
 
 /* Equipo Section */
@@ -287,6 +288,7 @@ section {
     color: var(--color-text-secondary);
     max-width: 700px;
     margin: 0 auto var(--spacing-lg);
+    line-height: 1.6;
 }
 
 .differentiators {
@@ -318,6 +320,7 @@ section {
 .diff-item p {
     color: var(--color-text-secondary);
     font-size: 0.9375rem;
+    line-height: 1.5;
 }
 
 .tech-stack {
@@ -346,7 +349,7 @@ section {
     font-size: 0.875rem;
     border: 1px solid var(--color-border);
     color: var(--color-text-secondary);
-    background-color: var(--color-bg); /* ESTO SÍ ESTABA */
+    background-color: var(--color-bg); /* SÍ tiene fondo */
 }
 
 /* FAQ Section */
