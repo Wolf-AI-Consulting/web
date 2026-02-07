@@ -363,9 +363,13 @@ section {
 }
 
 /* BOTÓN CON ESPACIO IGUAL ARRIBA Y ABAJO */
+#solucion {
+    padding-bottom: 5rem; /* Más espacio abajo */
+}
+
 #solucion .cta-button {
     display: block;
-    margin: 2.5rem auto; /* ESPACIO SIMÉTRICO */
+    margin: 4rem auto; /* ESPACIO SIMÉTRICO aumentado */
     padding: 1rem 3rem;
     font-size: 1.125rem;
     background: var(--color-accent);
