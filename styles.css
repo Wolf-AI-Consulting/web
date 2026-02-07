@@ -644,10 +644,10 @@ section#solucion .container > .cta-button {
     line-height: 1.7;
 }
 
-/* ===== CTA FINAL SECTION - VERSIÓN COMPACTA ===== */
+/* ===== CTA FINAL SECTION - SIN EMAIL ===== */
 .cta-final {
     text-align: center;
-    padding: 4rem 0 3rem 0; /* Más espacio arriba, menos abajo */
+    padding: 5rem 0; /* Espacio equilibrado arriba y abajo */
     background: linear-gradient(135deg, 
         rgba(93, 95, 239, 0.08) 0%, 
         rgba(139, 95, 239, 0.04) 100%);
@@ -655,97 +655,68 @@ section#solucion .container > .cta-button {
     border-bottom: 1px solid var(--color-border);
 }
 
+.cta-final .container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
 .cta-final .section-title {
-    font-size: clamp(2rem, 4vw, 2.5rem);
-    margin-bottom: 1rem; /* Reducido */
+    font-size: clamp(2.25rem, 5vw, 2.75rem);
+    margin-bottom: 1rem;
     color: var(--color-text);
+    line-height: 1.2;
 }
 
 .cta-final-text {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     color: var(--color-text-secondary);
-    margin-bottom: 2.5rem; /* Reducido */
-    max-width: 600px;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    max-width: 550px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.6;
 }
 
-/* BOTÓN CTA FINAL */
+/* BOTÓN CTA FINAL - CENTRADO Y PROMINENTE */
 .cta-final .cta-button-large {
     display: block;
-    margin: 0 auto 2rem auto; /* 2rem de espacio debajo del botón */
-    padding: 1.25rem 4rem;
-    font-size: 1.125rem;
+    margin: 0 auto;
+    padding: 1.5rem 5rem;
+    font-size: 1.25rem;
     background: linear-gradient(135deg, #5D5FEF 0%, #8B5FEF 100%);
     border: none;
-    border-radius: 12px;
+    border-radius: 14px;
     font-weight: var(--font-weight-semibold);
-    color: white; /* Cambié a blanco para mejor contraste */
+    color: white;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(93, 95, 239, 0.3);
-}
-
-.cta-final .cta-button-large:hover {
-    transform: translateY(-3px);
     box-shadow: 0 6px 25px rgba(93, 95, 239, 0.4);
 }
 
-.cta-final .cta-button-large:active {
-    transform: translateY(-1px);
-}
-
-/* CONTACTO - SUPER COMPACTO */
-.contact-info {
-    margin-top: 0;
-    padding-top: 1.5rem; /* Mucho menos espacio arriba de la línea */
-    border-top: 1px solid rgba(93, 95, 239, 0.15); /* Línea más sutil */
-}
-
-.email-contact {
-    font-size: 1.125rem;
-    color: var(--color-text);
-    font-weight: var(--font-weight-medium);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: color 0.3s ease;
-    padding: 0.5rem 1rem; /* Un poco de padding alrededor */
-    border-radius: 6px;
-}
-
-.email-contact:hover {
-    color: var(--color-accent);
-    background: rgba(93, 95, 239, 0.05);
+.cta-final .cta-button-large:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(93, 95, 239, 0.5);
 }
 
 /* ===== RESPONSIVE CTA ===== */
 @media (max-width: 768px) {
     .cta-final {
-        padding: 3rem 0 2rem 0;
+        padding: 4rem 0;
     }
     
     .cta-final .cta-button-large {
-        width: 100%;
-        max-width: 300px;
+        width: 90%;
+        max-width: 350px;
         padding: 1.25rem 2rem;
-        margin-bottom: 1.75rem;
+        font-size: 1.125rem;
     }
     
     .cta-final-text {
         font-size: 1.125rem;
-        margin-bottom: 2rem;
         padding: 0 1rem;
     }
-    
-    .contact-info {
-        padding-top: 1.25rem;
-    }
 }
-
-
 
 
 /* FOOTER COMPACTO */
