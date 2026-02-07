@@ -784,6 +784,37 @@ section#solucion .container > .cta-button {
     margin: 0;
 }
 
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .cta-final {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .cta-final .cta-button-large {
+        width: 100%;
+        max-width: 300px;
+        padding: 1.25rem 2rem;
+    }
+    
+    .cta-final-text {
+        font-size: 1.125rem;
+        margin-bottom: 2.5rem;
+        padding: 0 1rem;
+    }
+    
+    .footer-links {
+        gap: 1.5rem;
+    }
+    
+    .footer {
+        padding: 2rem var(--spacing-md);
+    }
+    
+    .footer-logo {
+        font-size: 1.5rem;
+    }
+}
+
 /* Modal */
 .modal {
     display: none;
