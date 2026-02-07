@@ -254,11 +254,13 @@ section {
     padding: var(--spacing-md);
     border: 1px solid var(--color-border);
     border-radius: 12px;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: var(--color-bg); /* ESTO SÍ ESTABA EN V2 */
 }
 
 .case-card:hover {
     border-color: var(--color-accent);
+    transform: translateY(-5px); /* ESTO SÍ ESTABA EN V2 */
 }
 
 .case-card h3 {
@@ -297,6 +299,14 @@ section {
 .diff-item {
     padding: var(--spacing-md);
     text-align: center;
+    border: 1px solid var(--color-border); /* ESTO SÍ ESTABA */
+    border-radius: 12px; /* ESTO SÍ ESTABA */
+    background-color: var(--color-bg-secondary); /* ESTO SÍ ESTABA */
+    transition: border-color 0.3s ease; /* ESTO SÍ ESTABA */
+}
+
+.diff-item:hover {
+    border-color: var(--color-accent); /* ESTO SÍ ESTABA */
 }
 
 .diff-item h4 {
@@ -336,6 +346,7 @@ section {
     font-size: 0.875rem;
     border: 1px solid var(--color-border);
     color: var(--color-text-secondary);
+    background-color: var(--color-bg); /* ESTO SÍ ESTABA */
 }
 
 /* FAQ Section */
