@@ -277,7 +277,6 @@ section {
         padding: 1.5rem;
     }
 } */
-
 /* ===== PROBLEMA SECTION ===== */
 .problema {
     background-color: var(--color-bg-secondary); /* FONDO OSCURO */
@@ -289,6 +288,12 @@ section {
     text-align: center;
     margin-bottom: 3rem;
     color: var(--color-text);
+}
+
+/* SEGUNDO SIGNO DE PREGUNTA EN VIOLETA */
+#problema .section-title::after {
+    content: '?';
+    color: var(--color-accent); /* COLOR VIOLETA */
 }
 
 /* QUOTES GRID */
