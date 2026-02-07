@@ -244,11 +244,6 @@ section {
     background-color: var(--color-bg-secondary);
 }
 
-/*.cases-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-md);
-}*/
 .cases-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -260,7 +255,6 @@ section {
     border: 1px solid var(--color-border);
     border-radius: 12px;
     transition: border-color 0.3s ease;
-    background-color: var(--color-bg); /* SÍ tiene fondo */
 }
 
 .case-card:hover {
@@ -277,13 +271,11 @@ section {
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-sm);
     font-size: 0.9375rem;
-    line-height: 1.5;
 }
 
 .case-result {
     color: var(--color-accent) !important;
     font-weight: var(--font-weight-medium);
-    font-size: 0.875rem;
 }
 
 /* Equipo Section */
