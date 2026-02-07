@@ -744,99 +744,132 @@ section#solucion .container > .cta-button {
 
 
 /* FOOTER COMPACTO */
+/* ===== FOOTER COMPACTO Y ALINEADO ===== */
 .footer {
-    padding: 1.25rem var(--spacing-md);
+    padding: 2rem var(--spacing-md) 1.5rem var(--spacing-md);
     background: var(--color-bg-secondary);
-    border-top: 1px solid rgba(93, 95, 239, 0.15);
+    border-top: 1px solid rgba(93, 95, 239, 0.1);
 }
 
 .footer .container {
+    max-width: 900px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    gap: 0.75rem; /* Espacio reducido entre secciones */
+}
+
+/* Primera línea: Logo + slogan en horizontal */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.75rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.footer-brand {
-    text-align: center;
-    margin-bottom: 0;
-}
-
-/* LOGO como imagen */
-.footer-logo {
-    display: inline-block;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.25rem; /* Muy poco espacio debajo */
 }
 
 .footer-logo img {
     height: 28px;
     width: auto;
+    display: block;
 }
 
-.footer-tagline {
-    font-size: 0.85rem;
-    color: var(--color-accent);
+.footer-slogan {
+    font-size: 0.9rem;
     font-weight: var(--font-weight-medium);
-    margin: 0;
-    line-height: 1.2;
 }
 
+/* DEGRADADO para el slogan (igual que en Hero) */
+.gradient-text {
+    background: linear-gradient(135deg, #5D5FEF 0%, #8B5FEF 50%, #C25FEF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+/* Segunda línea: Navegación COMPACTA */
 .footer-links {
     display: flex;
-    gap: 1.25rem;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0.5rem 0;
+    gap: 1rem; /* Espacio reducido entre enlaces */
+    margin: 0.25rem 0; /* Espacio mínimo arriba/abajo */
+    padding: 0.75rem 0; /* Padding interno reducido */
+    border-top: 1px solid rgba(93, 95, 239, 0.08); /* Línea MUY sutil */
+    border-bottom: 1px solid rgba(93, 95, 239, 0.08); /* Línea MUY sutil */
 }
 
 .footer-links a {
     color: var(--color-text-secondary);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     transition: all 0.2s ease;
-    padding: 0.25rem 0;
+    padding: 0.125rem 0.25rem;
+    border-radius: 3px;
 }
 
 .footer-links a:hover {
     color: var(--color-text);
-    transform: translateY(-1px);
+    background: rgba(93, 95, 239, 0.05);
 }
 
+/* Contacto con un poco más de énfasis */
+.footer-links .contact-link {
+    font-weight: var(--font-weight-medium);
+}
+
+/* Tercera línea: Copyright */
 .footer-bottom {
     text-align: center;
-    margin-top: 0.75rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid rgba(93, 95, 239, 0.1);
+    margin-top: 0.5rem; /* Espacio mínimo arriba */
+    padding-top: 0.75rem; /* Espacio mínimo sobre la línea */
+    border-top: 1px solid rgba(93, 95, 239, 0.05); /* Línea super sutil */
     width: 100%;
 }
 
 .footer-bottom p {
     color: var(--color-text-secondary);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     margin: 0;
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE FOOTER ===== */
 @media (max-width: 768px) {
-    
     .footer {
-        padding: 1rem var(--spacing-md);
+        padding: 1.5rem var(--spacing-md) 1.25rem var(--spacing-md);
     }
     
-    .footer-links {
-        gap: 1rem;
+    .footer-top {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
     }
     
     .footer-logo img {
         height: 24px;
     }
     
+    .footer-slogan {
+        font-size: 0.85rem;
+    }
+    
+    .footer-links {
+        gap: 0.75rem;
+        padding: 0.5rem 0;
+    }
+    
+    .footer-links a {
+        font-size: 0.75rem;
+    }
+    
     .footer-bottom {
-        margin-top: 0.5rem;
+        margin-top: 0.25rem;
         padding-top: 0.5rem;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.7rem;
     }
 }
 
