@@ -54,12 +54,25 @@ h1, h2, h3, h4 {
     justify-content: center;
     text-align: center;
     padding: var(--spacing-xl) 0;
+    position: relative;
 }
 
+/* LOGO ARRIBA IZQUIERDA - como V1 */
 .hero-logo {
+    position: absolute;
+    top: var(--spacing-md);
+    left: var(--spacing-md);
+    z-index: 10;
     width: 120px;
     height: auto;
-    margin-bottom: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+    .hero-logo {
+        width: 80px;
+        top: 1rem;
+        left: 1rem;
+    }
 }
 
 .hero-title {
@@ -67,6 +80,15 @@ h1, h2, h3, h4 {
     font-weight: var(--font-weight-semibold);
     margin-bottom: var(--spacing-md);
     letter-spacing: -0.02em;
+}
+
+/* DEGRADADO SOLO A "Sin humo. Con resultados." */
+.gradient-text {
+    background: linear-gradient(135deg, #5D5FEF 0%, #8B5FEF 50%, #C25FEF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
 }
 
 .hero-subtitle {
