@@ -645,19 +645,20 @@ section#solucion .container > .cta-button {
 }
 
 /* ===== CTA FINAL SECTION - SIN EMAIL ===== */
+/* ===== CTA FINAL SECTION - SIN ROTURA DE LÍNEA ===== */
 .cta-final {
-     text-align: center;
+    text-align: center;
     padding: 7rem 0;
     background: linear-gradient(135deg, 
         rgba(93, 95, 239, 0.08) 0%, 
         rgba(139, 95, 239, 0.04) 100%);
-    border-top: 1px solid rgba(93, 95, 239, 0.15); /* Más sutil */
-    border-bottom: 1px solid rgba(93, 95, 239, 0.15); /* Más sutil */
+    border-top: 1px solid rgba(93, 95, 239, 0.15);
+    border-bottom: 1px solid rgba(93, 95, 239, 0.15);
     position: relative;
     overflow: hidden;
 }
 
-/* Efecto sutil de partículas - MUY DISCRETO */
+/* Efecto sutil de partículas */
 .cta-final::before {
     content: '';
     position: absolute;
@@ -666,12 +667,12 @@ section#solucion .container > .cta-button {
     right: 0;
     bottom: 0;
     background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%235d5fef' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-    opacity: 0.1; /* Reducido de 0.3 a 0.1 - MUY SUTIL */
+    opacity: 0.1;
     pointer-events: none;
 }
 
 .cta-final .container {
-    max-width: 700px;
+    max-width: 800px; /* IMPORTANTE: Más ancho */
     margin: 0 auto;
     padding: 0 var(--spacing-md);
     position: relative;
@@ -679,16 +680,19 @@ section#solucion .container > .cta-button {
 }
 
 .cta-final .section-title {
-    font-size: clamp(2.5rem, 5.5vw, 3rem); /* Más grande */
+    font-size: clamp(2.5rem, 5.5vw, 3rem);
     margin-bottom: 1.25rem;
     color: var(--color-text);
     line-height: 1.1;
+    word-wrap: normal;
+    hyphens: none; /* Previene separación de palabras */
+    white-space: normal;
 }
 
 .cta-final-text {
-    font-size: 1.375rem; /* Más grande */
+    font-size: 1.375rem;
     color: var(--color-text-secondary);
-    margin-bottom: 3rem; /* Más espacio antes del botón */
+    margin-bottom: 3rem;
     line-height: 1.7;
     max-width: 550px;
     margin-left: auto;
@@ -696,35 +700,67 @@ section#solucion .container > .cta-button {
     font-weight: var(--font-weight-regular);
 }
 
-/* BOTÓN CTA FINAL - CENTRADO Y PROMINENTE */
+/* BOTÓN CTA FINAL */
 .cta-final .cta-button-large {
-    display: block;
+    display: inline-block;
     margin: 0 auto;
-    padding: 1.5rem 5rem;
-    font-size: 1.25rem;
+    padding: 1.75rem 6rem;
+    font-size: 1.375rem;
     background: linear-gradient(135deg, #5D5FEF 0%, #8B5FEF 100%);
     border: none;
-    border-radius: 14px;
-    font-weight: var(--font-weight-semibold);
+    border-radius: 16px;
+    font-weight: var(--font-weight-bold);
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 6px 25px rgba(93, 95, 239, 0.4);
+    box-shadow: 0 8px 35px rgba(93, 95, 239, 0.5);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de brillo en hover */
+.cta-final .cta-button-large::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    transition: transform 0.6s;
+    opacity: 0;
+}
+
+.cta-final .cta-button-large:hover::after {
+    transform: rotate(30deg) translate(20%, 20%);
+    opacity: 0.8;
 }
 
 .cta-final .cta-button-large:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(93, 95, 239, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(93, 95, 239, 0.6);
+}
+
+.cta-final .cta-button-large:active {
+    transform: translateY(-2px);
 }
 
 /* ===== RESPONSIVE CTA ===== */
 @media (max-width: 768px) {
     .cta-final {
-        padding: 5rem 0; /* Mantiene buena altura en móvil */
+        padding: 5rem 0;
     }
     
     .cta-final .section-title {
         font-size: clamp(2rem, 6vw, 2.5rem);
+        padding: 0 0.5rem; /* Pequeño padding para evitar bordes */
     }
     
     .cta-final-text {
