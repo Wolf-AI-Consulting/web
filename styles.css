@@ -63,15 +63,15 @@ h1, h2, h3, h4 {
     top: var(--spacing-md);
     left: var(--spacing-md);
     z-index: 10;
-    height: 60px;               /* TAMAÑO IGUAL QUE VERSIÓN 1 */
+    height: 60px;
     width: auto;
-    max-width: 320px;           /* TAMAÑO IGUAL QUE VERSIÓN 1 */
+    max-width: 320px;
     display: block;
 }
 
 @media (max-width: 768px) {
     .hero-logo {
-        height: 45px;           /* TAMAÑO IGUAL QUE VERSIÓN 1 */
+        height: 45px;
         top: 1rem;
         left: 1rem;
     }
@@ -286,68 +286,7 @@ section {
     font-weight: var(--font-weight-medium);
 }
 
-/* Equipo Section */
-/* Original 
-.equipo-intro {
-    text-align: center;
-    font-size: 1.125rem;
-    color: var(--color-text-secondary);
-    max-width: 700px;
-    margin: 0 auto var(--spacing-lg);
-}
-
-.differentiators {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
-}
-
-.diff-item {
-    padding: var(--spacing-md);
-    text-align: center;
-}
-
-.diff-item h4 {
-    font-size: 1.125rem;
-    margin-bottom: var(--spacing-xs);
-    font-weight: var(--font-weight-semibold);
-}
-
-.diff-item p {
-    color: var(--color-text-secondary);
-    font-size: 0.9375rem;
-}
-
-.tech-stack {
-    text-align: center;
-    padding: var(--spacing-lg) 0;
-    border-top: 1px solid var(--color-border);
-}
-
-.tech-title {
-    font-size: 1rem;
-    font-weight: var(--font-weight-medium);
-    margin-bottom: var(--spacing-md);
-    color: var(--color-text-secondary);
-}
-
-.tech-logos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    justify-content: center;
-}
-
-.tech-logos span {
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    font-size: 0.875rem;
-    border: 1px solid var(--color-border);
-    color: var(--color-text-secondary);
-} */
-
-/* De la versión Original */
+/* Equipo Section - MODIFICADO */
 .equipo-intro {
     text-align: center;
     font-size: 1.125rem;
@@ -356,34 +295,53 @@ section {
     margin: 0 auto var(--spacing-lg);
 }
 
-.differentiators {
+/* DIFERENCIADORES 4 EN LÍNEA - SIN FONDO OSCURO */
+.equipo .differentiators {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.diff-item {
-    background-color: var(--color-bg-secondary);
+.equipo .diff-item {
     padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
     border-radius: 12px;
-    border: 1px solid #222;
     text-align: center;
+    transition: all 0.3s ease;
+    background-color: transparent; /* Sin fondo oscuro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 220px;
 }
 
-.diff-icon {
+.equipo .diff-item:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-5px);
+}
+
+.equipo .diff-icon {
     font-size: 2.5rem;
     margin-bottom: var(--spacing-sm);
 }
 
-.diff-item h4 {
+.equipo .diff-item h4 {
     font-size: 1.125rem;
     margin-bottom: var(--spacing-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
 }
 
-.diff-item p {
+.equipo .diff-item p {
     color: var(--color-text-secondary);
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    margin: 0;
 }
 
 .tech-stack {
@@ -408,9 +366,6 @@ section {
     border: 1px solid var(--color-border);
     color: var(--color-text-secondary);
 }
-
-
-/* Fin de la versión original */
 
 /* FAQ Section */
 .faq {
@@ -568,7 +523,41 @@ section {
     border: none;
 }
 
-/* Responsive */
+/* FIX GLOBAL PARA GRIDS */
+.problem-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cases-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.solution-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .equipo .differentiators {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+    }
+    
+    .problem-grid,
+    .cases-grid,
+    .differentiators,
+    .solution-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     :root {
         --spacing-lg: 3rem;
@@ -579,162 +568,8 @@ section {
         height: 45px;
     }
 
-    .solution-grid,
-    .cases-grid,
-    .differentiators {
+    .equipo .differentiators {
         grid-template-columns: 1fr;
-    }
-
-    .modal-content {
-        width: 95%;
-        margin: 5% auto;
-    }
-}
-
-/* Ajuste para Problem Grid - 2x2 en móvil */
-@media (max-width: 768px) {
-    .problem-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas fijas */
-        gap: 1rem;
-    }
-    
-    .problem-item {
-        min-height: 140px; /* altura mínima para consistencia */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-/*******/
-/* ========== FIX GLOBAL PARA GRIDS 2x2 ========== */
-
-/* Para PROBLEM GRID (4 items) */
-.problem-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Para CASES GRID (4 items) */
-.cases-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Para DIFFERENTIATORS GRID (4 items) */
-.differentiators {
-    grid-template-columns: repeat(2, 1fr) !important;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Para SOLUTION GRID (2 items) - Ya está bien */
-.solution-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-}
-
-/* ========== RESPONSIVE ========== */
-
-/* Tablet (768px-1024px) - Mantener 2x2 */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .problem-grid,
-    .cases-grid,
-    .differentiators,
-    .solution-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 1.5rem;
-    }
-}
-
-/* Móvil (≤768px) - 1 columna */
-@media (max-width: 768px) {
-    .problem-grid,
-    .cases-grid,
-    .differentiators,
-    .solution-grid {
-        grid-template-columns: 1fr !important;
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-/* Móvil pequeño (≤480px) - Ajustes */
-@media (max-width: 480px) {
-    .problem-grid,
-    .cases-grid,
-    .differentiators,
-    .solution-grid {
-        max-width: 100%;
-        gap: 1rem;
-    }
-}
-
-/*******/
-/* ========== DIFERENCIADORES 4 EN LÍNEA ========== */
-.equipo .differentiators {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 EN LÍNEA */
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
-}
-
-.equipo .diff-item {
-    padding: var(--spacing-md);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    text-align: center;
-    transition: all 0.3s ease;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 220px;
-}
-
-.equipo .diff-item:hover {
-    border-color: var(--color-accent);
-    transform: translateY(-5px);
-}
-
-.equipo .diff-icon {
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-sm);
-}
-
-.equipo .diff-item h4 {
-    font-size: 1.125rem;
-    margin-bottom: var(--spacing-xs);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-text);
-}
-
-.equipo .diff-item p {
-    color: var(--color-text-secondary);
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-    .equipo .differentiators {
-        grid-template-columns: repeat(2, 1fr); /* Tablet: 2x2 */
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .equipo .differentiators {
-        grid-template-columns: 1fr; /* Móvil: 1 columna */
         max-width: 500px;
         gap: var(--spacing-sm);
     }
@@ -747,9 +582,25 @@ section {
     .equipo .diff-icon {
         font-size: 2rem;
     }
+    
+    .problem-grid,
+    .cases-grid,
+    .differentiators,
+    .solution-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 500px;
+    }
 }
 
-/*******/
+@media (max-width: 480px) {
+    .problem-grid,
+    .cases-grid,
+    .differentiators,
+    .solution-grid {
+        max-width: 100%;
+        gap: 1rem;
+    }
+}
 
 /* Smooth Scroll */
 html {
