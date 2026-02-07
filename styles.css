@@ -177,76 +177,6 @@ section {
     margin: 0 auto;
 }
 
-/* Solución Section
-.solution-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
-}
-
-.solution-column h3 {
-    font-size: 1.5rem;
-    margin-bottom: var(--spacing-md);
-    font-weight: var(--font-weight-semibold);
-}
-
-.solution-column ul {
-    list-style: none;
-}
-
-.solution-column li {
-    padding-left: 1.5rem;
-    position: relative;
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-text-secondary);
-}
-
-.solution-column li:before {
-    content: "—";
-    position: absolute;
-    left: 0;
-    color: var(--color-accent);
-}
-
-.deliverables {
-    padding: var(--spacing-lg) 0;
-    text-align: center;
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: var(--spacing-lg);
-}
-
-.deliverables-title {
-    font-size: 1rem;
-    font-weight: var(--font-weight-medium);
-    margin-bottom: var(--spacing-md);
-    color: var(--color-text-secondary);
-}
-
-.deliverable-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-md);
-    justify-content: center;
-}
-
-.deliverable-items span {
-    color: var(--color-text);
-    font-weight: var(--font-weight-regular);
-}
-
-.pricing {
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-}
-
-.price {
-    font-size: 3rem;
-    color: var(--color-text);
-    font-weight: var(--font-weight-semibold);
-} */
-
 /* ===== SOLUCIÓN SECTION ===== */
 .solution-grid {
     display: grid;
@@ -293,13 +223,14 @@ section {
     color: var(--color-accent);
 }
 
+/* CAMBIADO: Sin background en el contenedor principal */
 .deliverables {
     padding: 2.5rem;
     text-align: center;
     border: 1px solid var(--color-border);
     border-radius: 12px;
     margin-bottom: 2.5rem;
-    background: rgba(93, 95, 239, 0.05);
+    /* Sin background aquí */
 }
 
 .deliverables-title {
@@ -315,6 +246,7 @@ section {
     gap: 1.5rem;
 }
 
+/* Las cards individuales SÍ tienen fondo sutil */
 .deliverable-items span {
     padding: 1rem;
     border: 1px solid var(--color-border);
@@ -381,8 +313,6 @@ section {
         padding: 1rem;
     }
 }
-
-
 
 /* Casos Section */
 .casos {
@@ -494,14 +424,6 @@ section {
 }
 
 .tech-title {
-    /*font-size: 1.125rem;
-    font-weight: var(--font-weight-semibold);
-    margin-bottom: var(--spacing-md);
-    color: var(--color-text);
-    text-align: center;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 0.5rem;*/
     font-size: 1.25rem;
     font-weight: var(--font-weight-semibold);
     margin-bottom: 1.5rem; /* REDUCIDO: de 2rem a 1.5rem (20px) */
