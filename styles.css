@@ -644,28 +644,7 @@ section#solucion .container > .cta-button {
     line-height: 1.7;
 }
 
-/* CTA Final Section
-.cta-final {
-    text-align: center;
-}
-
-.cta-final-text {
-    font-size: 1.125rem;
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-lg);
-}
-
-.contact-info {
-    margin-top: var(--spacing-lg);
-}
-
-.email-contact {
-    font-size: 1.125rem;
-    color: var(--color-text-secondary);
-    font-weight: var(--font-weight-regular);
-}*/
-
-/* ===== CTA FINAL SECTION ===== 
+/* ===== BOTÓN CTA FINAL SECTION ===== */
 .cta-final {
     text-align: center;
     padding: var(--spacing-xl) 0;
@@ -690,7 +669,7 @@ section#solucion .container > .cta-button {
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
-}*/
+}
 
 /* BOTÓN CTA FINAL */
 .cta-final .cta-button-large {
@@ -706,8 +685,6 @@ section#solucion .container > .cta-button {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(93, 95, 239, 0.3);
-    position: relative;
-    overflow: hidden;
 }
 
 .cta-final .cta-button-large:hover {
@@ -741,65 +718,45 @@ section#solucion .container > .cta-button {
     color: var(--color-accent);
 }
 
-.email-contact::before {
-    content: "✉️";
-    font-size: 1rem;
-}
-
-/* Footer
-.footer {
-    padding: var(--spacing-md);
-    text-align: center;
-    color: var(--color-text-secondary);
-    font-size: 0.875rem;
-    border-top: 1px solid var(--color-border);
-}*/
-
 /* ===== FOOTER MEJORADO ===== */
 .footer {
     padding: 3rem var(--spacing-md);
-    text-align: center;
-    color: var(--color-text-secondary);
-    font-size: 0.875rem;
-    border-top: 1px solid var(--color-border);
     background: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
 }
 
 .footer .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    text-align: center;
 }
 
 .footer-logo {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: var(--font-weight-bold);
     color: var(--color-text);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
     margin-bottom: 0.5rem;
-}
-
-.footer-logo::before {
-    content: "🐺";
-    font-size: 1.25rem;
 }
 
 .footer-tagline {
     font-size: 0.875rem;
     color: var(--color-accent);
     font-weight: var(--font-weight-medium);
-    margin-bottom: 1.5rem;
 }
 
 .footer-links {
     display: flex;
     gap: 2rem;
-    margin: 1.5rem 0;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 1rem 0;
 }
 
 .footer-links a {
@@ -811,6 +768,20 @@ section#solucion .container > .cta-button {
 
 .footer-links a:hover {
     color: var(--color-text);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    width: 100%;
+}
+
+.footer-bottom p {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    margin: 0;
 }
 
 /* Modal */
