@@ -63,13 +63,15 @@ h1, h2, h3, h4 {
     top: var(--spacing-md);
     left: var(--spacing-md);
     z-index: 10;
-    width: 120px;
-    height: auto;
+    height: 60px;               /* TAMAÑO IGUAL QUE VERSIÓN 1 */
+    width: auto;
+    max-width: 320px;           /* TAMAÑO IGUAL QUE VERSIÓN 1 */
+    display: block;
 }
 
 @media (max-width: 768px) {
     .hero-logo {
-        width: 80px;
+        height: 45px;           /* TAMAÑO IGUAL QUE VERSIÓN 1 */
         top: 1rem;
         left: 1rem;
     }
