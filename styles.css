@@ -972,7 +972,7 @@ section#solucion .container > .cta-button {
     }
 }*/
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     .footer {
         padding: 1.5rem var(--spacing-sm) 1.25rem var(--spacing-sm);
     }
@@ -991,7 +991,6 @@ section#solucion .container > .cta-button {
         font-size: 0.85rem;
     }
     
-    /* 🔥 ESTO ES LO CLAVE: Mejor distribución de enlaces */
     .footer-links {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -1007,6 +1006,63 @@ section#solucion .container > .cta-button {
         border-radius: 4px;
         background: rgba(255, 255, 255, 0.02);
         transition: all 0.2s ease;
+    }
+    
+    .footer-links a:hover {
+        background: rgba(93, 95, 239, 0.08);
+    }
+    
+    .footer-links a:nth-child(8)::before {
+        content: none;
+    }
+    
+    .footer-bottom {
+        margin-top: 0.5rem;
+        padding-top: 0.75rem;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.7rem;
+        line-height: 1.4;
+    }
+}*/
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 1.5rem var(--spacing-md) 1.25rem var(--spacing-md);
+    }
+    
+    .footer-top {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .footer-logo img {
+        height: 24px;
+    }
+    
+    .footer-slogan {
+        font-size: 0.85rem;
+    }
+    
+    /* 🔥 SOLUCIÓN 2 - FLEX CON WRAP (más natural) */
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 0.75rem; /* 0.5rem vertical, 0.75rem horizontal */
+        padding: 0.75rem 0;
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+    
+    .footer-links a {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.02);
+        white-space: nowrap;
     }
     
     .footer-links a:hover {
