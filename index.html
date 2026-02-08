@@ -29,58 +29,8 @@
 </head>
 <body>
 
-    <!-- Incluir el banner -->
-    <!-- Puedes copiar-pegar el HTML del Paso 1 aquí -->
-    <!-- Banner de Cookies - Debe ir justo después de <body> -->
-    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; width:100%; background:#333; color:white; padding:20px; z-index:9999; text-align:center;">
-        <div style="max-width:800px; margin:0 auto;">
-            <p>🍪 Este sitio usa cookies de Google Analytics para analizar el tráfico. Puedes aceptar, rechazar o personalizar.</p>
-            <p style="font-size:14px; margin-top:10px;">
-                <a href="legal/politica-cookies.html" style="color:#4da6ff;">Política de Cookies</a> | 
-                <a href="legal/politica-privacidad.html" style="color:#4da6ff;">Política de Privacidad</a>
-            </p>
-            <div style="margin-top:15px;">
-                <button id="reject-cookies" style="background:#666; color:white; border:none; padding:10px 20px; margin:0 10px; cursor:pointer;">
-                    Rechazar
-                </button>
-                <button id="configure-cookies" style="background:#555; color:white; border:none; padding:10px 20px; margin:0 10px; cursor:pointer;">
-                    Configurar
-                </button>
-                <button id="accept-cookies" style="background:#4CAF50; color:white; border:none; padding:10px 20px; margin:0 10px; cursor:pointer;">
-                    Aceptar Todas
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Panel de Configuración (Opcional pero recomendado) -->
-    <div id="cookie-panel" style="display:none; position:fixed; bottom:0; width:100%; background:#fff; color:#333; padding:20px; z-index:9998; border-top:2px solid #4CAF50;">
-        <div style="max-width:800px; margin:0 auto;">
-            <h3>⚙️ Configuración de Cookies</h3>
-            
-            <div style="margin:15px 0;">
-                <label style="display:block; margin-bottom:10px;">
-                    <input type="checkbox" id="analytics-cookie" checked disabled>
-                    <strong>Cookies de Analítica (Google Analytics)</strong>
-                    <span style="font-size:14px; color:#666;">- Necesarias para estadísticas anónimas. No se pueden desactivar si aceptas cookies.</span>
-                </label>
-                
-                <p style="font-size:14px; margin-top:20px;">
-                    Al hacer clic en "Guardar Preferencias", aceptas el uso de las cookies seleccionadas según nuestra 
-                    <a href="legal/politica-cookies.html">Política de Cookies</a>.
-                </p>
-            </div>
-            
-            <div>
-                <button id="save-preferences" style="background:#4CAF50; color:white; border:none; padding:10px 25px; cursor:pointer;">
-                    Guardar Preferencias
-                </button>
-                <button id="close-panel" style="background:#ccc; color:#333; border:none; padding:10px 25px; margin-left:10px; cursor:pointer;">
-                    Cerrar
-                </button>
-            </div>
-        </div>
-    </div>
+    <!-- Contenedor para cargar el banner dinámicamente -->
+    <div id="cookie-banner-container"></div>
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
@@ -414,7 +364,7 @@
             <a href="mailto:wolfaiconsulting@gmail.com" class="contact-link">
                 Contacto
             </a>
-            <a href="legal/politica-privacidad.html">Política de Privacidad</a> |
+            <a href="legal/politica-cookies.html">Política de Cookies</a> |
             <a href="legal/politica-privacidad.html">Política de Privacidad</a>
         </div>
         
@@ -426,18 +376,53 @@
     </footer>
     
     <!-- Scripts -->
+    <!-- Scripts -->
+    <!-- Script para cargar el banner de cookies -->
     <script>
-        // Cargar el banner dinámicamente
-        fetch('legal/cookie-banner.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('cookie-banner-container').innerHTML = html;
-                // Ahora cargar el JS del banner
-                const script = document.createElement('script');
-                script.src = 'legal/cookie-banner.js';
-                document.body.appendChild(script);
-            })
-            .catch(error => console.error('Error cargando banner:', error));
+        // Función para cargar el banner de cookies dinámicamente
+        function loadCookieBanner() {
+            const container = document.getElementById('cookie-banner-container');
+            if (!container) return;
+            
+            // Cargar HTML del banner
+            fetch('legal/cookie-banner.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    container.innerHTML = html;
+                    
+                    // Cargar el JS del banner
+                    const script = document.createElement('script');
+                    script.src = 'legal/cookie-banner.js';
+                    script.onerror = function() {
+                        console.error('Error cargando cookie-banner.js');
+                    };
+                    document.body.appendChild(script);
+                    
+                    console.log('Cookie banner cargado correctamente');
+                })
+                .catch(error => {
+                    console.error('Error cargando el banner de cookies:', error);
+                    // Mostrar un banner de emergencia si falla la carga
+                    container.innerHTML = `
+                        <div style="position:fixed; bottom:0; left:0; right:0; background:#f0ad4e; color:#333; padding:15px; text-align:center; z-index:10000;">
+                            🍪 Este sitio usa cookies. 
+                            <a href="legal/politica-cookies.html" style="color:#333; text-decoration:underline;">Más información</a>
+                        </div>
+                    `;
+                });
+        }
+        
+        // Cargar cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadCookieBanner);
+        } else {
+            loadCookieBanner();
+        }
     </script>
 
     <!-- Tally Modal -->
