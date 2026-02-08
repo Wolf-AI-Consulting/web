@@ -248,16 +248,23 @@ section {
 }
 
 /* ===== RECUADRO DEL 80% - ESTILO SIMPLE ===== */
-
-/* Aplicar directamente el estilo de .deliverables */
-.deliverables.problem-stat-wrapper {
-    max-width: 500px;
+deliverables.problem-stat-wrapper {
+    max-width: 1000px; /* Igual que .problem-quotes */
+    width: 100%;
     margin: 2.5rem auto 2rem;
+    padding: 2.5rem;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
 }
 
-/* Ajustar el contenido dentro */
+/* Contenido centrado dentro del recuadro ancho */
 .deliverables.problem-stat-wrapper .problem-stat-simple {
     margin: 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .deliverables.problem-stat-wrapper .stat-simple-number {
@@ -271,11 +278,11 @@ section {
 }
 
 .deliverables.problem-stat-wrapper .stat-simple-reason {
+    font-size: 1.125rem;
     font-style: normal;
     font-weight: var(--font-weight-medium);
 }
 
-/* Ajustar espacio después del recuadro */
 .deliverables.problem-stat-wrapper + .case-extra {
     margin-top: 2rem;
 }
@@ -316,6 +323,25 @@ section {
     
     .problem-cta h3 {
         font-size: 1.5rem;
+    }
+
+    /* Recuadro del 80% en móvil */
+    .deliverables.problem-stat-wrapper {
+        max-width: 500px; /* Igual que .problem-quotes en móvil */
+        padding: 1.5rem;
+        margin: 2rem auto;
+    }
+    
+    .deliverables.problem-stat-wrapper .stat-simple-number {
+        font-size: 3.5rem;
+    }
+    
+    .deliverables.problem-stat-wrapper .stat-simple-text {
+        font-size: 1.25rem;
+    }
+    
+    .deliverables.problem-stat-wrapper .stat-simple-reason {
+        font-size: 1rem;
     }
 }
 
