@@ -434,44 +434,6 @@ section#solucion .container > .cta-button {
 }
 
 
-/* CTA Casos de Uso - Versión minimalista */
-.case-cta {
-    text-align: center;
-    margin-top: var(--spacing-xl);
-    padding: var(--spacing-md) 0;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    border-top: 1px solid var(--color-border);
-    padding-top: var(--spacing-lg);
-}
-
-.case-cta h3 {
-    font-size: 1.5rem;
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-text-primary);
-}
-
-.case-cta-subtitle {
-    font-size: 1.125rem;
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-accent);
-    margin-bottom: var(--spacing-sm);
-}
-
-.case-cta-text {
-    font-size: 1rem;
-    color: var(--color-text-secondary);
-    line-height: 1.6;
-    margin-bottom: 0;
-}
-
-.case-cta strong {
-    color: var(--color-accent);
-    font-weight: var(--font-weight-semibold);
-}
-
-
 /* Equipo Section - MODIFICADO */
 .equipo-intro {
     text-align: center;
