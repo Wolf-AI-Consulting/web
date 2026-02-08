@@ -140,6 +140,7 @@ section {
     margin-bottom: var(--spacing-lg);
     letter-spacing: -0.02em;
 }
+
 /* ===== PROBLEMA SECTION ===== */
 .problema {
     background-color: var(--color-bg-secondary);
