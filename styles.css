@@ -478,7 +478,7 @@ section#solucion .container > .cta-button {
     text-align: center;
     margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid #ddd;
+    /*border-top: 1px solid #ddd;*/
 }
 
 .case-extra-title {
@@ -489,15 +489,10 @@ section#solucion .container > .cta-button {
 
 .case-extra-text {
     font-size: 1.125rem;
-    color: #555;
+    color: var(--color-text-secondary);
     line-height: 1.5;
     max-width: 600px;
     margin: 0 auto;
-}
-
-.case-extra strong {
-    color: #0066ff;
-    font-weight: 600;
 }
 
 /* Equipo Section - MODIFICADO */
