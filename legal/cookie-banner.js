@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const panel = document.getElementById('cookie-panel');
     const overlay = document.getElementById('cookie-overlay');
     
-    // Estado inicial
+    // Estado inicial - MOVER getCookie ARRIBA O DEFINIR PRIMERO
     const consent = getCookie(COOKIE_NAME);
     
     // Solo mostrar banner si no hay decisión previa
@@ -41,6 +41,35 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Cerrar panel al hacer clic en overlay
     overlay?.addEventListener('click', hideCookiePanel);
+    
+    // ========== FUNCIONES AUXILIARES (MOVER ARRIBA) ==========
+    
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        const cookieValue = encodeURIComponent(value);
+        document.cookie = `${name}=${cookieValue};${expires};path=/;SameSite=Lax;Secure`;
+        
+        // Registrar para debug
+        console.log(`Cookie establecida: ${name}=${value} (${days} días)`);
+    }
+    
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const cookies = document.cookie.split(';');
+        
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i];
+            while (cookie.charAt(0) === ' ') {
+                cookie = cookie.substring(1);
+            }
+            if (cookie.indexOf(nameEQ) === 0) {
+                return decodeURIComponent(cookie.substring(nameEQ.length));
+            }
+        }
+        return null;
+    }
     
     // ========== FUNCIONES PRINCIPALES ==========
     
@@ -133,33 +162,21 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('✅ Google Analytics configurado con consentimiento RGPD');
     }
     
-    // ========== FUNCIONES AUXILIARES ==========
+    // ========== MENSAJES DE CONFIRMACIÓN ==========
     
-    function setCookie(name, value, days) {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        const expires = "expires=" + date.toUTCString();
-        const cookieValue = encodeURIComponent(value);
-        document.cookie = `${name}=${cookieValue};${expires};path=/;SameSite=Lax;Secure`;
-        
-        // Registrar para debug
-        console.log(`Cookie establecida: ${name}=${value} (${days} días)`);
-    }
-    
-    function getCookie(name) {
-        const nameEQ = name + "=";
-        const cookies = document.cookie.split(';');
-        
-        for (let i = 0; i < cookies.length; i++) {
-            let cookie = cookies[i];
-            while (cookie.charAt(0) === ' ') {
-                cookie = cookie.substring(1);
+    // Añadir estilos de animación una sola vez
+    if (!document.getElementById('cookie-animation-styles')) {
+        const style = document.createElement('style');
+        style.id = 'cookie-animation-styles';
+        style.textContent = `
+            @keyframes fadeInOut {
+                0% { opacity: 0; transform: translateY(-20px); }
+                10% { opacity: 1; transform: translateY(0); }
+                90% { opacity: 1; transform: translateY(0); }
+                100% { opacity: 0; transform: translateY(-20px); }
             }
-            if (cookie.indexOf(nameEQ) === 0) {
-                return decodeURIComponent(cookie.substring(nameEQ.length));
-            }
-        }
-        return null;
+        `;
+        document.head.appendChild(style);
     }
     
     function showConfirmationMessage(text) {
@@ -179,18 +196,6 @@ document.addEventListener('DOMContentLoaded', function() {
             animation: fadeInOut 3s ease-in-out;
         `;
         
-        // Estilos de animación
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fadeInOut {
-                0% { opacity: 0; transform: translateY(-20px); }
-                10% { opacity: 1; transform: translateY(0); }
-                90% { opacity: 1; transform: translateY(0); }
-                100% { opacity: 0; transform: translateY(-20px); }
-            }
-        `;
-        document.head.appendChild(style);
-        
         document.body.appendChild(message);
         
         // Eliminar después de 3 segundos
@@ -201,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
     
-    // ========== FUNCIONES PÚBLICAS (accesibles desde otros scripts) ==========
+    // ========== FUNCIONES PÚBLICAS ==========
     
     window.CookieManager = {
         hasConsent: function() {
@@ -216,7 +221,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // Añadir botón "Gestionar Cookies" al footer si no existe
+    // ========== BOTÓN "GESTIONAR COOKIES" EN FOOTER ==========
+    
     setTimeout(() => {
         const footer = document.querySelector('footer');
         if (footer && !document.getElementById('manage-cookies-btn')) {
@@ -224,17 +230,22 @@ document.addEventListener('DOMContentLoaded', function() {
             manageBtn.id = 'manage-cookies-btn';
             manageBtn.href = '#';
             manageBtn.textContent = 'Gestionar Cookies';
-            manageBtn.style.cssText = 'margin-left: 15px; color: #666; text-decoration: underline; font-size: 14px;';
+            manageBtn.style.cssText = 'margin-left: 15px; color: #666; text-decoration: underline; font-size: 14px; cursor: pointer;';
             manageBtn.onclick = function(e) {
                 e.preventDefault();
                 showCookiePanel();
             };
             
-            const legalLinks = footer.querySelector('.legal-links');
-            if (legalLinks) {
-                legalLinks.appendChild(document.createTextNode(' | '));
-                legalLinks.appendChild(manageBtn);
+            // Buscar el contenedor correcto (en tu index.html es .footer-links)
+            const footerLinks = footer.querySelector('.footer-links');
+            if (footerLinks) {
+                footerLinks.appendChild(document.createTextNode(' | '));
+                footerLinks.appendChild(manageBtn);
+            } else {
+                // Fallback: añadir al footer
+                footer.appendChild(document.createElement('br'));
+                footer.appendChild(manageBtn);
             }
         }
-    }, 1000);
+    }, 1500);
 });
