@@ -85,22 +85,15 @@ h1, h2, h3, h4 {
 }
 
 /* DEGRADADO SOLO A "Sin humo. Con resultados." */
-/*.gradient-text {
-    background: linear-gradient(135deg, #5D5FEF 0%, #8B5FEF 50%, #C25FEF 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    display: inline-block;
-}*/
-
 .gradient-text {
     background: linear-gradient(135deg, #5D5FEF 0%, #8B5FEF 50%, #C25FEF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    display: block; /* Cambia de inline-block a block */
-    margin-top: 0.75rem; /* Ajusta este valor: 0.5rem, 0.75rem, 1rem */
-    font-size: clamp(2.2rem, 5.5vw, 3.5rem); /* Opcional: un poco más pequeño */
+    /*display: inline-block;*/
+    display: block; /* CAMBIAR de inline-block a block */
+    margin-top: 0.75rem; /* AGREGAR esta línea */
+    /* Opcional: font-size: clamp(2.2rem, 5.5vw, 3.5rem); */
 }
 
 
