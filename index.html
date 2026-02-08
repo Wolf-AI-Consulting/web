@@ -369,7 +369,7 @@
     </footer>
     
     <!-- ================================================ -->
-    <!-- SCRIPT DE COOKIES - VERSIÓN SIMPLIFICADA -->
+    <!-- SCRIPT DE COOKIES - VERSIÓN CORREGIDA (TIMING FIX) -->
     <!-- ================================================ -->
     <script>
         // Función principal para cargar el banner de cookies
@@ -378,31 +378,30 @@
             
             const container = document.getElementById('cookie-banner-container');
             
-            // Si no hay contenedor, crearlo
             if (!container) {
                 console.error('No se encontró el contenedor para el banner');
                 return;
             }
             
-            // Intentar cargar el banner desde el archivo externo
+            // 1. PRIMERO cargar el HTML del banner
             fetch('legal/cookie-banner.html')
                 .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Archivo no encontrado');
-                    }
+                    if (!response.ok) throw new Error('Archivo no encontrado');
                     return response.text();
                 })
                 .then(html => {
                     // Insertar el HTML del banner
                     container.innerHTML = html;
-                    console.log('✅ Banner HTML cargado');
+                    console.log('✅ Banner HTML cargado en DOM');
                     
-                    // Cargar la lógica JavaScript
-                    loadCookieLogic();
+                    // 2. ESPERAR que el DOM se actualice completamente
+                    setTimeout(() => {
+                        // 3. SOLO AHORA cargar la lógica JavaScript
+                        loadCookieLogic();
+                    }, 50); // Pequeño delay para asegurar que el DOM está listo
                 })
                 .catch(error => {
                     console.warn('⚠️ No se pudo cargar el banner externo:', error.message);
-                    // Crear un banner básico de emergencia
                     createSimpleBanner();
                 });
         }
@@ -411,11 +410,35 @@
         function loadCookieLogic() {
             const script = document.createElement('script');
             script.src = 'legal/cookie-banner.js';
-            script.onload = () => console.log('✅ Lógica de cookies cargada');
-            script.onerror = () => {
+            
+            script.onload = function() {
+                console.log('✅ Lógica de cookies cargada');
+                
+                // VERIFICACIÓN: ¿Los elementos del banner existen ahora en el DOM?
+                const banner = document.getElementById('cookie-banner');
+                const panel = document.getElementById('cookie-panel');
+                
+                if (banner && panel) {
+                    console.log('🎯 Elementos del banner encontrados:', {
+                        banner: banner,
+                        panel: panel
+                    });
+                    
+                    // El cookie-banner.js ya se inicializará automáticamente
+                    // porque tiene su propio DOMContentLoaded listener
+                } else {
+                    console.error('❌ Elementos del banner NO encontrados después de cargar HTML');
+                    console.log('Buscando #cookie-banner:', !!banner);
+                    console.log('Buscando #cookie-panel:', !!panel);
+                }
+            };
+            
+            script.onerror = function() {
                 console.error('❌ Error cargando cookie-banner.js');
                 setupSimpleBannerLogic();
             };
+            
+            // Añadir el script al head
             document.head.appendChild(script);
         }
         
