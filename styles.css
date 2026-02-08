@@ -247,6 +247,49 @@ section {
     font-weight: var(--font-weight-semibold);
 }
 
+/* ===== RECUADRO DEL 80% CON ESTILO "DELIVERABLES" ===== */
+
+/* Contenedor principal con estilo de .deliverables */
+.problem-stat-container.deliverables {
+    max-width: 500px; /* Ancho máximo controlado */
+    margin: 2.5rem auto 2rem; /* Centrado con espacio */
+    padding: 2.5rem; /* Mismo padding que los entregables */
+    text-align: center; /* Asegurar centrado */
+    border: 1px solid var(--color-border); /* Borde igual */
+    border-radius: 12px; /* Esquinas redondeadas igual */
+    background: rgba(255, 255, 255, 0.02); /* Fondo igual */
+}
+
+/* Sobrescribir los márgenes del .problem-stat-simple dentro del recuadro */
+.problem-stat-container.deliverables .problem-stat-simple {
+    margin: 0; /* Eliminar márgenes que tenía antes */
+}
+
+/* Ajustar tamaños de fuente para que quepan mejor en el recuadro */
+.problem-stat-container.deliverables .stat-simple-number {
+    font-size: 4rem; /* Reducir de 5rem a 4rem */
+    margin-bottom: 0.5rem;
+}
+
+.problem-stat-container.deliverables .stat-simple-text {
+    font-size: 1.375rem; /* Reducir de 1.5rem a 1.375rem */
+    margin-bottom: 0.25rem;
+}
+
+.problem-stat-container.deliverables .stat-simple-reason {
+    font-size: 1.125rem; /* Mantener igual o reducir si quieres */
+    font-style: normal; /* Quitar cursiva para consistencia */
+    font-weight: var(--font-weight-medium); /* Un poco más de peso */
+}
+
+/* Ajustar espacio entre el recuadro y el texto de abajo */
+.problem-stat-container.deliverables + .case-extra {
+    margin-top: 2rem;
+}
+
+
+
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .problem-quotes {
@@ -283,6 +326,8 @@ section {
         font-size: 1.5rem;
     }
 }
+
+
 
 /* ===== SOLUCIÓN SECTION ===== */
 .solution-grid {
