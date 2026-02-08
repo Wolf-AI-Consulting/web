@@ -473,6 +473,48 @@ section#solucion .container > .cta-button {
     font-weight: var(--font-weight-medium);
 }
 
+* CTA Casos de Uso */
+.case-cta {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.05); /* Sutil diferencia de fondo */
+    border: 1px dashed var(--color-border); /* Borde discontinuo para distinguir */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.case-cta h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-primary);
+}
+
+.case-cta-subtitle {
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-sm);
+}
+
+.case-cta-text {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0; /* Eliminamos margen inferior ya que no hay botón */
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.case-cta strong {
+    color: var(--color-accent);
+    font-weight: var(--font-weight-semibold);
+}
+
+
 /* Equipo Section - MODIFICADO */
 .equipo-intro {
     text-align: center;
