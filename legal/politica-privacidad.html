@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad - [Nombre de tu Sitio]</title>
+    <title>Política de Privacidad - Wolf AI Consulting</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -30,21 +30,27 @@
         }
         
         header {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
             color: white;
-            padding: 2rem;
-            border-radius: 8px 8px 0 0;
+            padding: 2.5rem;
+            border-radius: 10px 10px 0 0;
             margin-bottom: 2rem;
+            text-align: center;
         }
         
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             margin-bottom: 0.5rem;
         }
         
         .last-updated {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             opacity: 0.9;
+            background: rgba(255,255,255,0.1);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-top: 10px;
         }
         
         main {
@@ -53,28 +59,29 @@
         
         section {
             margin-bottom: 2.5rem;
-            padding: 1.5rem;
+            padding: 1.8rem;
             background-color: var(--light-bg);
-            border-radius: 6px;
-            border-left: 4px solid var(--secondary-color);
+            border-radius: 8px;
+            border-left: 5px solid var(--secondary-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         
         h2 {
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
-            font-size: 1.5rem;
+            border-bottom: 2px solid var(--border-color);
+            font-size: 1.7rem;
         }
         
         h3 {
             color: var(--secondary-color);
             margin: 1.5rem 0 0.8rem 0;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
         
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
         
         ul, ol {
@@ -82,19 +89,21 @@
         }
         
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
         
         .contact-info {
             background-color: #e8f4fc;
-            border-left: 4px solid #3498db;
-            padding: 1.5rem;
+            border-left: 5px solid #3498db;
+            padding: 1.8rem;
             margin: 2rem 0;
+            border-radius: 6px;
         }
         
         .contact-info h3 {
             color: #2c3e50;
             margin-top: 0;
+            margin-bottom: 1rem;
         }
         
         .info-table {
@@ -102,12 +111,14 @@
             border-collapse: collapse;
             margin: 1.5rem 0;
             background-color: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            overflow: hidden;
         }
         
         .info-table th, .info-table td {
             border: 1px solid var(--border-color);
-            padding: 12px 15px;
+            padding: 14px 18px;
             text-align: left;
         }
         
@@ -115,6 +126,7 @@
             background-color: var(--primary-color);
             color: white;
             font-weight: 600;
+            font-size: 1.05rem;
         }
         
         .info-table tr:nth-child(even) {
@@ -122,56 +134,89 @@
         }
         
         .highlight {
-            background-color: #fffacd;
-            padding: 0.3rem 0.5rem;
-            border-radius: 3px;
-            font-weight: 500;
+            background-color: #fff3cd;
+            padding: 1.2rem;
+            border-radius: 6px;
+            border-left: 4px solid #ffc107;
+            margin: 1.5rem 0;
         }
         
         footer {
             margin-top: 3rem;
             padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
+            border-top: 2px solid var(--border-color);
             text-align: center;
             color: #666;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
         
         .back-button {
             display: inline-block;
-            background-color: var(--secondary-color);
+            background: linear-gradient(135deg, #3498db, #2980b9);
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 12px 30px;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             margin-top: 1rem;
-            transition: background-color 0.3s;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
         }
         
         .back-button:hover {
-            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        }
+        
+        .policy-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .policy-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+        
+        .policy-link:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
         }
         
         @media (max-width: 768px) {
             body {
-                padding: 10px;
+                padding: 15px;
             }
             
             header {
-                padding: 1.5rem;
+                padding: 1.8rem 1.2rem;
             }
             
             h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             section {
-                padding: 1rem;
+                padding: 1.2rem;
             }
             
             .info-table {
                 display: block;
                 overflow-x: auto;
+            }
+            
+            .policy-links {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -180,13 +225,16 @@
     <header>
         <h1>Política de Privacidad</h1>
         <p class="last-updated"><strong>Última actualización:</strong> <span id="current-date"></span></p>
+        <p style="margin-top: 10px; font-size: 1.1rem; opacity: 0.95;">
+            wolfaiconsulting.com | Consultoría de IA para PYMEs
+        </p>
     </header>
     
     <main>
         <section>
             <h2>1. Información General</h2>
-            <p>En <strong>[Nombre de tu Sitio Web]</strong> (en adelante, "el Sitio"), accesible desde <strong>[tu-dominio.com]</strong>, la privacidad de nuestros visitantes es una de nuestras principales prioridades.</p>
-            <p>Esta Política de Privacidad documenta los tipos de información que recopilamos y cómo la utilizamos.</p>
+            <p>En <strong>Wolf AI Consulting</strong> (en adelante, "el Sitio"), accesible desde <strong>wolfaiconsulting.com</strong>, la privacidad de nuestros visitantes es una de nuestras principales prioridades.</p>
+            <p>Esta Política de Privacidad documenta los tipos de información que recopilamos y cómo la utilizamos, cumpliendo con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales.</p>
             <p>Si tienes preguntas adicionales o necesitas más información sobre nuestra Política de Privacidad, no dudes en contactarnos.</p>
         </section>
         
@@ -194,11 +242,10 @@
             <h2>2. Responsable del Tratamiento</h2>
             <div class="contact-info">
                 <h3>Información del Responsable:</h3>
-                <p><strong>Nombre/Razón Social:</strong> [Tu Nombre o Nombre de la Empresa]</p>
-                <p><strong>DNI/NIF:</strong> [Tu DNI o CIF]</p>
-                <p><strong>Domicilio:</strong> [Tu Dirección]</p>
-                <p><strong>Email de contacto:</strong> [tu-email@dominio.com]</p>
-                <p><strong>Teléfono:</strong> [Tu Teléfono]</p>
+                <p><strong>Nombre/Razón Social:</strong> Wolf AI Consulting</p>
+                <p><strong>Email de contacto:</strong> wolfaiconsulting@gmail.com</p>
+                <p><strong>Ubicación:</strong> Valencia, España</p>
+                <p><strong>Actividad:</strong> Consultoría tecnológica especializada en Inteligencia Artificial para PYMEs</p>
             </div>
         </section>
         
@@ -217,25 +264,27 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Datos de navegación (IP, tipo de navegador, páginas visitadas)</td>
-                        <td>Análisis estadístico anónimo</td>
-                        <td>Consentimiento del usuario (art. 6.1.a RGPD)</td>
+                        <td>Datos de navegación (dirección IP anonimizada, tipo de navegador, páginas visitadas, tiempo en el sitio)</td>
+                        <td>Análisis estadístico anónimo para mejorar la experiencia del usuario</td>
+                        <td>Consentimiento explícito del usuario (art. 6.1.a RGPD)</td>
                     </tr>
                     <tr>
-                        <td>Información técnica del dispositivo</td>
-                        <td>Optimización de la experiencia de usuario</td>
+                        <td>Información técnica del dispositivo (sistema operativo, resolución de pantalla, idioma)</td>
+                        <td>Optimización técnica y adaptación del sitio a diferentes dispositivos</td>
                         <td>Interés legítimo (art. 6.1.f RGPD)</td>
                     </tr>
                 </tbody>
             </table>
             
             <h3>3.2 Datos Proporcionados Voluntariamente</h3>
-            <p>Si nos contactas a través de formularios o email, podríamos recopilar:</p>
+            <p>Si nos contactas a través del formulario de contacto o email, podríamos recopilar:</p>
             <ul>
                 <li>Nombre y apellidos</li>
                 <li>Dirección de correo electrónico</li>
-                <li>Número de teléfono</li>
-                <li>Cualquier otra información que decidas proporcionar</li>
+                <li>Nombre de la empresa</li>
+                <li>Cargo/profesión</li>
+                <li>Número de teléfono (opcional)</li>
+                <li>Cualquier otra información que decidas proporcionar en tu mensaje</li>
             </ul>
         </section>
         
@@ -243,13 +292,14 @@
             <h2>4. Finalidades del Tratamiento</h2>
             <p>Utilizamos tus datos para las siguientes finalidades:</p>
             <ul>
-                <li><strong>Análisis estadístico:</strong> Mediante Google Analytics, para entender cómo los usuarios interactúan con nuestro sitio y mejorar su experiencia.</li>
-                <li><strong>Atención al usuario:</strong> Para responder a consultas y solicitudes.</li>
-                <li><strong>Cumplimiento legal:</strong> Para cumplir con obligaciones legales aplicables.</li>
+                <li><strong>Análisis estadístico:</strong> Mediante Google Analytics (con IP anonimizada), para entender cómo los usuarios interactúan con nuestro sitio y mejorar su experiencia.</li>
+                <li><strong>Atención al cliente:</strong> Para responder a consultas, solicitudes de información o propuestas de colaboración.</li>
+                <li><strong>Mejora del servicio:</strong> Para analizar tendencias y mejorar nuestros servicios de consultoría.</li>
+                <li><strong>Cumplimiento legal:</strong> Para cumplir con obligaciones legales aplicables en materia de protección de datos.</li>
             </ul>
             
             <div class="highlight">
-                <p><strong>⚠️ Importante:</strong> Google Analytics puede recopilar datos de navegación. Consulta nuestra <a href="politica-cookies.html">Política de Cookies</a> para más información y cómo gestionar tu consentimiento.</p>
+                <p><strong>⚠️ Sobre Google Analytics:</strong> Utilizamos Google Analytics con configuración RGPD-Compliant (IP anonimizada, sin compartir datos con Google para publicidad). Consulta nuestra <a href="../politica-cookies.html">Política de Cookies</a> para más información y cómo gestionar tu consentimiento.</p>
             </div>
         </section>
         
@@ -257,32 +307,35 @@
             <h2>5. Base Legal para el Tratamiento</h2>
             <p>El tratamiento de tus datos se basa en:</p>
             <ol>
-                <li><strong>Consentimiento explícito</strong> (art. 6.1.a RGPD): Para cookies y análisis web.</li>
-                <li><strong>Interés legítimo</strong> (art. 6.1.f RGPD): Para mantener la seguridad del sitio y prevenir fraudes.</li>
+                <li><strong>Consentimiento explícito</strong> (art. 6.1.a RGPD): Para cookies y análisis web. Puedes retirarlo en cualquier momento.</li>
+                <li><strong>Interés legítimo</strong> (art. 6.1.f RGPD): Para mantener la seguridad del sitio, prevenir fraudes y mejorar nuestros servicios.</li>
+                <li><strong>Ejecución de medidas precontractuales</strong> (art. 6.1.b RGPD): Cuando nos contactas para solicitar información sobre nuestros servicios.</li>
                 <li><strong>Cumplimiento de obligaciones legales</strong> (art. 6.1.c RGPD): Cuando sea necesario por ley.</li>
             </ol>
         </section>
         
         <section>
             <h2>6. Transferencias Internacionales</h2>
-            <p>Utilizamos Google Analytics, servicio de Google LLC, con servidores que pueden estar ubicados fuera del Espacio Económico Europeo (EEE).</p>
-            <p>Google se adhiere al <strong>Marco de Adecuación de la UE-EE.UU.</strong> y ha implementado las <strong>Cláusulas Contractuales Tipo</strong> aprobadas por la Comisión Europea para garantizar un nivel adecuado de protección de datos.</p>
-            <p>Puedes obtener más información sobre la política de privacidad de Google en: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
+            <p>Utilizamos Google Analytics, servicio de Google LLC, con servidores que pueden estar ubicados fuera del Espacio Económico Europeo (EEE), específicamente en Estados Unidos.</p>
+            <p>Google se adhiere al <strong>Marco de Adecuación de la UE-EE.UU.</strong> y ha implementado las <strong>Cláusulas Contractuales Tipo</strong> aprobadas por la Comisión Europea para garantizar un nivel adecuado de protección de datos equivalente al establecido en la legislación europea.</p>
+            <p>Puedes obtener más información sobre la política de privacidad de Google y sus medidas de seguridad en: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a></p>
         </section>
         
         <section>
             <h2>7. Período de Conservación</h2>
             <p>Conservamos tus datos durante el tiempo necesario para cumplir con las finalidades descritas:</p>
             <ul>
-                <li><strong>Datos de navegación:</strong> Hasta 26 meses desde la última interacción</li>
-                <li><strong>Datos de contacto:</strong> Hasta que se resuelva tu consulta y durante los plazos legales aplicables</li>
-                <li><strong>Cookies:</strong> Los períodos específicos se detallan en nuestra <a href="politica-cookies.html">Política de Cookies</a></li>
+                <li><strong>Datos de navegación (Google Analytics):</strong> Hasta 26 meses desde la última interacción, configurado con retención de datos mínima.</li>
+                <li><strong>Datos de contacto:</strong> Hasta que se resuelva tu consulta y durante 2 años adicionales por posibles reclamaciones legales.</li>
+                <li><strong>Cookies:</strong> Los períodos específicos se detallan en nuestra <a href="../politica-cookies.html">Política de Cookies</a>.</li>
+                <li><strong>Preferencias de consentimiento:</strong> Hasta 1 año desde tu última visita, para recordar tu elección.</li>
             </ul>
+            <p>Transcurridos estos plazos, los datos se eliminarán o anonimizarán de forma segura.</p>
         </section>
         
         <section>
             <h2>8. Tus Derechos RGPD</h2>
-            <p>De acuerdo con el Reglamento General de Protección de Datos (RGPD), tienes los siguientes derechos:</p>
+            <p>De acuerdo con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018, tienes los siguientes derechos:</p>
             
             <table class="info-table">
                 <thead>
@@ -295,73 +348,81 @@
                 <tbody>
                     <tr>
                         <td><strong>Derecho de acceso</strong></td>
-                        <td>Saber qué datos tenemos sobre ti</td>
-                        <td>Solicitar copia de tus datos</td>
+                        <td>Saber qué datos tenemos sobre ti y obtener copia</td>
+                        <td>Solicitud por email a la dirección indicada</td>
                     </tr>
                     <tr>
                         <td><strong>Derecho de rectificación</strong></td>
-                        <td>Corregir datos inexactos</td>
-                        <td>Solicitar corrección</td>
+                        <td>Corregir datos inexactos o incompletos</td>
+                        <td>Comunicación de corrección con datos actualizados</td>
                     </tr>
                     <tr>
-                        <td><strong>Derecho de supresión</strong></td>
-                        <td>Eliminar tus datos ("derecho al olvido")</td>
-                        <td>Solicitar eliminación</td>
+                        <td><strong>Derecho de supresión ("olvido")</strong></td>
+                        <td>Eliminar tus datos cuando ya no sean necesarios</td>
+                        <td>Solicitud de eliminación, salvo obligaciones legales</td>
                     </tr>
                     <tr>
                         <td><strong>Derecho de limitación</strong></td>
-                        <td>Limitar el tratamiento de tus datos</td>
-                        <td>Solicitar limitación</td>
+                        <td>Solicitar que limitemos el tratamiento temporalmente</td>
+                        <td>En casos de impugnación de exactitud o tratamiento ilícito</td>
                     </tr>
                     <tr>
                         <td><strong>Derecho de portabilidad</strong></td>
-                        <td>Recibir tus datos en formato estructurado</td>
-                        <td>Solicitar transferencia</td>
+                        <td>Recibir tus datos en formato estructurado y común</td>
+                        <td>Solicitud de entrega en formato digital estándar</td>
                     </tr>
                     <tr>
                         <td><strong>Derecho de oposición</strong></td>
-                        <td>Oponerte al tratamiento de tus datos</td>
-                        <td>Solicitar cese del tratamiento</td>
+                        <td>Oponerte al tratamiento basado en interés legítimo</td>
+                        <td>Solicitud de cese del tratamiento específico</td>
                     </tr>
                     <tr>
-                        <td><strong>Derecho a retirar el consentimiento</strong></td>
-                        <td>Retirar consentimiento en cualquier momento</td>
-                        <td>Contactar con nosotros</td>
+                        <td><strong>Retirar consentimiento</strong></td>
+                        <td>Revocar consentimiento en cualquier momento</td>
+                        <td>Comunicación por email o mediante "Gestionar Cookies"</td>
                     </tr>
                     <tr>
-                        <td><strong>Derecho a presentar reclamación</strong></td>
+                        <td><strong>Presentar reclamación</strong></td>
                         <td>Ante la autoridad de control (AEPD)</td>
-                        <td><a href="https://www.aepd.es" target="_blank">www.aepd.es</a></td>
+                        <td><a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a></td>
                     </tr>
                 </tbody>
             </table>
             
-            <p>Para ejercer cualquiera de estos derechos, contacta con nosotros en: <strong>[tu-email@dominio.com]</strong></p>
+            <p>Para ejercer cualquiera de estos derechos, contacta con nosotros en: <strong>wolfaiconsulting@gmail.com</strong></p>
+            <p>Responderemos a tu solicitud en un plazo máximo de <strong>1 mes</strong> desde su recepción.</p>
         </section>
         
         <section>
             <h2>9. Seguridad de los Datos</h2>
-            <p>Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger tus datos personales contra accesos no autorizados, alteración, divulgación o destrucción.</p>
-            <p>Entre estas medidas se incluyen:</p>
+            <p>Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger tus datos personales contra accesos no autorizados, alteración, divulgación o destrucción, incluyendo:</p>
             <ul>
-                <li>Cifrado HTTPS en todas las comunicaciones</li>
-                <li>Acceso restringido a datos personales</li>
-                <li>Revisiones periódicas de seguridad</li>
-                <li>Procedimientos para responder a brechas de seguridad</li>
+                <li><strong>Cifrado HTTPS/SSL</strong> en todas las comunicaciones con nuestro sitio</li>
+                <li><strong>Acceso restringido</strong> a datos personales, solo para personal autorizado</li>
+                <li><strong>Anonimización de IPs</strong> en Google Analytics</li>
+                <li><strong>Procedimientos documentados</strong> para responder a brechas de seguridad</li>
+                <li><strong>Revisión periódica</strong> de medidas de seguridad</li>
+                <li><strong>Contratos con proveedores</strong> que garantizan nivel adecuado de protección</li>
             </ul>
         </section>
         
         <section>
             <h2>10. Modificaciones a esta Política</h2>
-            <p>Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento. Cualquier cambio será publicado en esta página con la fecha de actualización correspondiente.</p>
+            <p>Nos reservamos el derecho de modificar esta Política de Privacidad para adaptarla a novedades legislativas, jurisprudenciales o cambios en nuestras actividades.</p>
+            <p>Todas las modificaciones serán publicadas en esta página con la fecha de actualización correspondiente. En caso de cambios sustanciales, podremos notificarte por email si nos has proporcionado tu dirección.</p>
             <p>Te recomendamos revisar periódicamente esta página para estar informado sobre cómo protegemos tu información.</p>
         </section>
+        
+        <div class="policy-links">
+            <a href="../politica-cookies.html" class="policy-link">📄 Política de Cookies</a>
+            <a href="../index.html" class="policy-link">🏠 Volver al Inicio</a>
+        </div>
     </main>
     
     <footer>
-        <p>© <span id="current-year"></span> [Nombre de tu Sitio Web]. Todos los derechos reservados.</p>
-        <p>Esta política cumple con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales.</p>
-        <a href="../index.html" class="back-button">← Volver al Inicio</a>
+        <p>© <span id="current-year"></span> Wolf AI Consulting. Todos los derechos reservados.</p>
+        <p>Esta política cumple con el Reglamento General de Protección de Datos (RGPD UE 2016/679) y la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD).</p>
+        <a href="../index.html" class="back-button">← Volver al Sitio Principal</a>
     </footer>
     
     <script>
@@ -380,23 +441,35 @@
             window.print();
         }
         
-        // Añadir botón de impresión si se desea
+        // Añadir botón de impresión
         document.addEventListener('DOMContentLoaded', function() {
             const printBtn = document.createElement('button');
             printBtn.textContent = '🖨️ Imprimir esta Política';
             printBtn.style.cssText = `
                 position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background: #2c3e50;
+                bottom: 25px;
+                right: 25px;
+                background: var(--primary-color);
                 color: white;
                 border: none;
-                padding: 10px 15px;
-                border-radius: 5px;
+                padding: 13px 20px;
+                border-radius: 8px;
                 cursor: pointer;
                 z-index: 1000;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                font-family: inherit;
+                font-size: 15px;
+                font-weight: 500;
+                transition: all 0.3s;
             `;
+            printBtn.onmouseover = function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 6px 15px rgba(0,0,0,0.2)';
+            };
+            printBtn.onmouseout = function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+            };
             printBtn.onclick = printPolicy;
             document.body.appendChild(printBtn);
         });
