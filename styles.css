@@ -434,56 +434,16 @@ section#solucion .container > .cta-button {
 }
 
 
-/* Casos Section */
-.casos {
-    background-color: var(--color-bg-secondary);
-}
-
-.cases-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: var(--spacing-md);
-}
-
-.case-card {
-    padding: var(--spacing-md);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    transition: border-color 0.3s ease;
-}
-
-.case-card:hover {
-    border-color: var(--color-accent);
-}
-
-.case-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: var(--spacing-sm);
-    font-weight: var(--font-weight-semibold);
-}
-
-.case-card p {
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-sm);
-    font-size: 0.9375rem;
-}
-
-.case-result {
-    color: var(--color-accent) !important;
-    font-weight: var(--font-weight-medium);
-}
-
-* CTA Casos de Uso */
+/* CTA Casos de Uso - Versión minimalista */
 .case-cta {
     text-align: center;
     margin-top: var(--spacing-xl);
-    padding: var(--spacing-lg);
-    border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.05); /* Sutil diferencia de fondo */
-    border: 1px dashed var(--color-border); /* Borde discontinuo para distinguir */
+    padding: var(--spacing-md) 0;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--spacing-lg);
 }
 
 .case-cta h3 {
@@ -503,10 +463,7 @@ section#solucion .container > .cta-button {
     font-size: 1rem;
     color: var(--color-text-secondary);
     line-height: 1.6;
-    margin-bottom: 0; /* Eliminamos margen inferior ya que no hay botón */
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 0;
 }
 
 .case-cta strong {
