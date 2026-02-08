@@ -789,7 +789,7 @@ section#solucion .container > .cta-button {
     font-size: 1.125rem;
     background: var(--color-accent); 
     border: none;
-    border-radius: 12px; /
+    border-radius: 12px;
     font-weight: var(--font-weight-semibold); 
     color: white;
     cursor: pointer;
