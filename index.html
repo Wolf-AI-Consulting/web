@@ -9,7 +9,7 @@
 
     <!-- CONFIGURACIÓN INICIAL DE CONSENTIMIENTO -->
     <script>
-        // Inicializar dataLayer
+        // Inicializar dataLayer para Google Analytics
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         
@@ -19,8 +19,6 @@
             'ad_storage': 'denied',
             'wait_for_update': 500
         });
-        
-        console.log('🔒 Consentimiento configurado: denegado por defecto');
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -371,128 +369,134 @@
     </footer>
     
     <!-- ================================================ -->
-    <!-- SCRIPT SIMPLIFICADO - CARGA EL BANNER EXTERNO -->
+    <!-- SCRIPT DE COOKIES - VERSIÓN SIMPLIFICADA -->
     <!-- ================================================ -->
     <script>
-        // Función para cargar el banner desde archivo externo
-        function loadCookieBanner() {
-            console.log('🔧 Inicializando sistema de cookies...');
+        // Función principal para cargar el banner de cookies
+        function initCookieBanner() {
+            console.log('🍪 Iniciando sistema de cookies...');
             
             const container = document.getElementById('cookie-banner-container');
+            
+            // Si no hay contenedor, crearlo
             if (!container) {
-                console.error('❌ No se encontró cookie-banner-container');
+                console.error('No se encontró el contenedor para el banner');
                 return;
             }
             
-            // Cargar el HTML del banner
+            // Intentar cargar el banner desde el archivo externo
             fetch('legal/cookie-banner.html')
                 .then(response => {
-                    if (!response.ok) throw new Error('No se pudo cargar el banner');
+                    if (!response.ok) {
+                        throw new Error('Archivo no encontrado');
+                    }
                     return response.text();
                 })
                 .then(html => {
+                    // Insertar el HTML del banner
                     container.innerHTML = html;
                     console.log('✅ Banner HTML cargado');
                     
-                    // Ahora cargar la lógica JS externa
-                    loadBannerLogic();
+                    // Cargar la lógica JavaScript
+                    loadCookieLogic();
                 })
                 .catch(error => {
-                    console.error('❌ Error cargando banner:', error);
+                    console.warn('⚠️ No se pudo cargar el banner externo:', error.message);
                     // Crear un banner básico de emergencia
-                    createEmergencyBanner();
+                    createSimpleBanner();
                 });
         }
         
-        function loadBannerLogic() {
-            // Cargar el archivo JS externo con toda la lógica
+        // Cargar la lógica del banner desde archivo externo
+        function loadCookieLogic() {
             const script = document.createElement('script');
             script.src = 'legal/cookie-banner.js';
-            script.onload = () => console.log('✅ Lógica del banner cargada desde archivo externo');
+            script.onload = () => console.log('✅ Lógica de cookies cargada');
             script.onerror = () => {
                 console.error('❌ Error cargando cookie-banner.js');
-                setupEmergencyBannerLogic();
+                setupSimpleBannerLogic();
             };
             document.head.appendChild(script);
         }
         
-        function createEmergencyBanner() {
+        // Banner simple de emergencia (si falla la carga)
+        function createSimpleBanner() {
             const container = document.getElementById('cookie-banner-container');
-            if (!container) return;
             
             container.innerHTML = `
-                <div id="cookie-banner" style="
-                    position:fixed; bottom:20px; left:20px; right:20px;
-                    background:#1a1a2e; color:white; padding:20px;
-                    border-radius:12px; z-index:10000; box-shadow:0 8px 32px rgba(0,0,0,0.3);
-                    border:1px solid #2d2d5a; display:none;
+                <div id="simple-cookie-banner" style="
+                    position: fixed;
+                    bottom: 20px;
+                    left: 20px;
+                    right: 20px;
+                    max-width: 500px;
+                    margin: 0 auto;
+                    background: #1a1a2e;
+                    color: white;
+                    padding: 20px;
+                    border-radius: 12px;
+                    z-index: 10000;
+                    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                    border: 1px solid #2d2d5a;
+                    font-family: 'Inter', sans-serif;
                 ">
-                    <p style="margin:0 0 15px 0; font-size:14px;">
-                        Usamos cookies para analizar el tráfico. 
-                        <a href="legal/politica-cookies.html" style="color:#5D5FEF;">Política de Cookies</a>
+                    <h3 style="margin-top: 0; color: #5D5FEF; font-size: 18px;">
+                        🍪 Uso de Cookies
+                    </h3>
+                    <p style="margin: 0 0 15px 0; font-size: 14px; color: #e0e0e0;">
+                        Usamos cookies para analizar el tráfico. Puedes aceptar o rechazar.
+                        <a href="legal/politica-cookies.html" style="color: #5D5FEF;">Política de Cookies</a>
                     </p>
-                    <div style="display:flex; gap:10px; justify-content:flex-end;">
-                        <button id="emergency-reject" style="
-                            padding:8px 16px; background:transparent; color:#999;
-                            border:1px solid #444; border-radius:6px; cursor:pointer;
-                        ">Rechazar</button>
-                        <button id="emergency-accept" style="
-                            padding:8px 16px; background:#5D5FEF; color:white;
-                            border:none; border-radius:6px; cursor:pointer;
-                        ">Aceptar</button>
+                    <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                        <button id="simple-reject" style="
+                            padding: 10px 20px;
+                            background: transparent;
+                            color: #999;
+                            border: 1px solid #444;
+                            border-radius: 6px;
+                            cursor: pointer;
+                        ">
+                            Rechazar
+                        </button>
+                        <button id="simple-accept" style="
+                            padding: 10px 20px;
+                            background: #5D5FEF;
+                            color: white;
+                            border: none;
+                            border-radius: 6px;
+                            cursor: pointer;
+                        ">
+                            Aceptar
+                        </button>
                     </div>
                 </div>
             `;
             
-            setupEmergencyBannerLogic();
+            setupSimpleBannerLogic();
         }
         
-        function setupEmergencyBannerLogic() {
-            const banner = document.getElementById('cookie-banner');
-            const acceptBtn = document.getElementById('emergency-accept');
-            const rejectBtn = document.getElementById('emergency-reject');
+        // Lógica básica para el banner simple
+        function setupSimpleBannerLogic() {
+            const banner = document.getElementById('simple-cookie-banner');
+            const acceptBtn = document.getElementById('simple-accept');
+            const rejectBtn = document.getElementById('simple-reject');
             
             if (!banner || !acceptBtn || !rejectBtn) return;
             
-            // Mostrar después de 1 segundo
-            setTimeout(() => {
-                banner.style.display = 'block';
-            }, 1000);
+            // Verificar si ya hay consentimiento
+            const hasConsent = document.cookie.includes('wolfai_cookie_consent=');
             
-            // Funciones básicas de cookies
-            function getCookie(name) {
-                const nameEQ = name + "=";
-                const ca = document.cookie.split(';');
-                for(let i=0; i < ca.length; i++) {
-                    let c = ca[i];
-                    while (c.charAt(0) === ' ') c = c.substring(1);
-                    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length);
-                }
-                return null;
+            if (!hasConsent) {
+                // Mostrar el banner después de 1 segundo
+                setTimeout(() => {
+                    banner.style.display = 'block';
+                }, 1000);
             }
             
-            function setCookie(name, value, days) {
-                const d = new Date();
-                d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-                const expires = "expires=" + d.toUTCString();
-                document.cookie = name + "=" + value + ";" + expires + ";path=/;SameSite=Lax";
-            }
-            
-            // Verificar consentimiento previo
-            if (getCookie('wolfai_cookie_consent') === 'accepted') {
-                // Activar GA si ya aceptó antes
-                if (typeof gtag !== 'undefined') {
-                    gtag('consent', 'update', {
-                        'analytics_storage': 'granted',
-                        'ad_storage': 'denied'
-                    });
-                    console.log('✅ GA activado por consentimiento previo');
-                }
-            }
-            
-            // Eventos
+            // Manejar aceptación
             acceptBtn.addEventListener('click', function() {
-                setCookie('wolfai_cookie_consent', 'accepted', 365);
+                // Guardar consentimiento por 1 año
+                document.cookie = 'wolfai_cookie_consent=accepted; max-age=31536000; path=/; SameSite=Lax';
                 banner.style.display = 'none';
                 
                 // Activar Google Analytics
@@ -509,36 +513,57 @@
                     document.head.appendChild(script);
                 }
                 
-                showEmergencyMessage('✅ Cookies aceptadas');
+                showMessage('✅ Cookies aceptadas');
             });
             
+            // Manejar rechazo
             rejectBtn.addEventListener('click', function() {
-                setCookie('wolfai_cookie_consent', 'rejected', 365);
+                document.cookie = 'wolfai_cookie_consent=rejected; max-age=31536000; path=/; SameSite=Lax';
                 banner.style.display = 'none';
-                showEmergencyMessage('Cookies rechazadas');
+                showMessage('Cookies rechazadas');
             });
-            
-            function showEmergencyMessage(text) {
-                const msg = document.createElement('div');
-                msg.textContent = text;
-                msg.style.cssText = `
-                    position:fixed; top:20px; right:20px;
-                    background:#5D5FEF; color:white; padding:12px 20px;
-                    border-radius:8px; z-index:10001;
-                    box-shadow:0 4px 12px rgba(0,0,0,0.2);
-                    animation:fadeInOut 3s ease-in-out;
-                `;
-                document.body.appendChild(msg);
-                setTimeout(() => msg.remove(), 3000);
-            }
         }
         
-        // Inicializar cuando el DOM esté listo
-        document.addEventListener('DOMContentLoaded', loadCookieBanner);
+        // Mostrar mensaje temporal
+        function showMessage(text) {
+            const message = document.createElement('div');
+            message.textContent = text;
+            message.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #5D5FEF;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 8px;
+                z-index: 10001;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                animation: fadeInOut 3s ease-in-out;
+                font-family: 'Inter', sans-serif;
+            `;
+            
+            document.body.appendChild(message);
+            setTimeout(() => message.remove(), 3000);
+        }
         
-        // Si el DOM ya está cargado
-        if (document.readyState === 'interactive' || document.readyState === 'complete') {
-            setTimeout(loadCookieBanner, 100);
+        // Añadir animación CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInOut {
+                0% { opacity: 0; transform: translateY(-20px); }
+                10% { opacity: 1; transform: translateY(0); }
+                90% { opacity: 1; transform: translateY(0); }
+                100% { opacity: 0; transform: translateY(-20px); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Inicializar cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCookieBanner);
+        } else {
+            // DOM ya cargado
+            initCookieBanner();
         }
     </script>
 
