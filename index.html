@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- NO pongas el código de Analytics aquí todavía -->
-    <!-- Se cargará dinámicamente después del consentimiento -->
-
     <meta name="description" content="Wolf AI Consulting - Implementamos IA en tu negocio. Auditoría + Roadmap de IA en 2 semanas para PYMEs.">
     <title>Wolf AI Consulting | Consultoría de IA para PYMEs</title>
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Pre-carga sin ejecutar Analytics -->
+    <!-- CONFIGURACIÓN INICIAL DE CONSENTIMIENTO -->
     <script>
-        // Consent Mode básico - BLOQUEAR hasta consentimiento
+        // Inicializar dataLayer
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
+        
+        // DENEGAR todo por defecto (RGPD compliant)
         gtag('consent', 'default', {
             'analytics_storage': 'denied',
             'ad_storage': 'denied',
             'wait_for_update': 500
         });
+        
+        console.log('🔒 Consentimiento configurado: denegado por defecto');
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
